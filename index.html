@@ -1,0 +1,1606 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Am, um, im</title>
+<meta name="description" content="Предлоги времени в немецком: am, um, im, vor, seit, für и компания. На картинках, с тестом.">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Onest:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#2B392D; --bg-2:#223024; --card-d:#35463A; --leaf:#364738;
+  --paper:#F7F7F4; --paper-2:#BFC7BC; --white:#FFFFFF; --mist:#EEF0EB;
+  --ink:#141614; --ink-2:#474C46; --ink-3:#7F857D;
+  --line:#DADDD5; --line-d:rgba(247,247,244,.2);
+  --btn:#2E3D30;
+  --im:#9DBB8B; --im-soft:#E3EEDB; --im-ink:#3B6532;
+  --am:#DCC68A; --am-soft:#F4ECD3; --am-ink:#7E621B;
+  --um:#E4E8E0; --um-soft:#E8EBE5; --um-ink:#2B392D;
+  --clay:#C9765A; --clay-soft:#F5E1D8; --clay-ink:#9C4A2F;
+  --f-head:"Onest", "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-body:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ease:cubic-bezier(.65,0,.25,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f-body);-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--am);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:16px}
+@media (min-width:700px){.wrap{padding-inline:24px}}
+.stack{display:flex;flex-direction:column;gap:14px;padding-block:6px 40px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(43,57,45,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:62px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--paper);font:600 15px/1 var(--f-head);letter-spacing:.16em}
+.brand img{width:30px;height:30px}
+.nav{display:none;gap:26px}
+.nav a{color:var(--paper-2);text-decoration:none;font-size:14px;transition:color .2s}
+.nav a:hover{color:var(--paper)}
+@media (min-width:1000px){.nav{display:flex}}
+
+/* ---------- primitives ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--btn);color:var(--paper);border:0;border-radius:999px;padding:15px 24px;font:500 15px/1 var(--f-body);text-decoration:none;cursor:pointer;transition:background .2s, transform .2s}
+.btn:hover{background:#243126}
+.btn .arr{transition:transform .25s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn--sm{padding:10px 16px;font-size:13.5px}
+.btn--paper{background:var(--paper);color:var(--ink)}
+.btn--paper:hover{background:#fff}
+.btn--wide{width:100%}
+.link{font-size:14px;color:var(--ink-2);text-underline-offset:4px}
+
+.panel{position:relative;z-index:1;background:var(--paper);border-radius:22px;padding:28px 20px}
+@media (min-width:700px){.panel{border-radius:28px;padding:48px 44px}}
+.eyebrow{margin:0;font:500 12px/1.3 var(--f-body);text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3)}
+.h2{margin:0;font:500 clamp(30px,7.8vw,58px)/1 var(--f-head);text-transform:uppercase;letter-spacing:-.015em;text-wrap:balance}
+.h3{margin:0;font:500 clamp(19px,4.4vw,24px)/1.12 var(--f-head);text-transform:uppercase;letter-spacing:-.005em;text-wrap:balance}
+.lead{margin:0;color:var(--ink-2);max-width:60ch}
+.head{display:grid;gap:14px;margin-bottom:26px}
+@media (min-width:700px){.head{margin-bottom:36px}}
+.split{display:grid;gap:28px}
+@media (min-width:920px){.split{grid-template-columns:1fr 1fr;gap:56px}}
+
+.story{display:grid;gap:10px;max-width:60ch}
+.story p{margin:0;color:var(--ink-2)}
+.story p b{color:var(--ink);font-weight:600}
+.story .de{font-family:var(--f-head);font-weight:500;color:var(--ink);background:var(--mist);padding:1px 6px;border-radius:6px}
+
+.rows{border-top:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:13px 0;border-bottom:1px solid var(--line);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3)}
+.row b{font:500 14px/1.35 var(--f-body);text-transform:none;letter-spacing:0;color:var(--ink);text-align:right}
+.row s{color:var(--ink-3);font-weight:400;margin-right:6px}
+
+.badge{display:inline-flex;align-items:center;justify-content:center;min-width:56px;height:38px;padding:0 15px;border-radius:999px;font:600 19px/1 var(--f-head);letter-spacing:.01em}
+.b-im{background:var(--im-soft);color:var(--im-ink)}
+.b-am{background:var(--am-soft);color:var(--am-ink)}
+.b-um{background:var(--um-soft);color:var(--um-ink)}
+.b-no{background:var(--mist);color:var(--ink-3)}
+
+.circ{width:42px;height:42px;flex:none;border-radius:50%;border:1.5px solid var(--ink);background:transparent;display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s,opacity .2s}
+.circ:hover{background:var(--ink);color:var(--paper)}
+.circ:disabled{opacity:.25;pointer-events:none}
+.circ svg{width:16px;height:16px}
+.arrows{display:flex;gap:8px}
+
+/* decorative leaves */
+.band{position:relative;padding-block:22px}
+@media (min-width:700px){.band{padding-block:40px}}
+.leaves{position:absolute;inset:0 -16px;overflow:hidden;pointer-events:none;z-index:0}
+.leaf{position:absolute;fill:var(--leaf);width:clamp(150px,42vw,420px);height:auto;animation:drift 22s ease-in-out infinite alternate}
+.leaf.l1{top:-4%;left:-6%}
+.leaf.l2{bottom:-6%;right:-4%;transform:rotate(180deg);animation-duration:26s}
+.leaf.l3{top:30%;right:18%;transform:rotate(90deg);width:clamp(110px,26vw,260px);animation-duration:30s}
+@keyframes drift{to{translate:0 18px}}
+
+/* ---------- hero ---------- */
+.hero-grid{display:grid;gap:22px}
+@media (min-width:920px){
+  .hero-grid{gap:34px}
+  .hero-word{font-size:min(15vw,210px)!important;flex-wrap:nowrap}
+  .hero-side{grid-template-columns:auto 1fr;align-items:center;column-gap:48px}
+  .hero-side .eyebrow{grid-column:1 / -1}
+}
+.hero-word{margin:0;font:700 clamp(74px,24.5vw,236px)/.82 var(--f-head);letter-spacing:-.055em;text-transform:uppercase;display:flex;flex-wrap:wrap;column-gap:.14em}
+.hero-word span{display:inline-block;animation:rise .9s var(--ease) both}
+.hero-word span:nth-child(2){animation-delay:.12s}
+.hero-word span:nth-child(3){animation-delay:.24s}
+.hero-word .im{color:var(--im-ink)} .hero-word .am{color:var(--am-ink)}
+@keyframes rise{from{transform:translateY(38%);opacity:0}}
+.hero-side{display:grid;gap:16px;justify-items:start}
+.hero-side .lead{font-size:15.5px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+
+.hero-visual{margin-block:26px 22px;border-radius:20px;background:var(--bg);color:var(--paper);display:grid;gap:18px;padding:20px 18px 22px;overflow:hidden;position:relative}
+@media (min-width:920px){.hero-visual{grid-template-columns:1.05fr .95fr;align-items:center;padding:40px 48px;gap:40px}}
+.rings{width:100%;max-width:440px;margin-inline:auto;overflow:visible}
+.rings text{font-family:var(--f-body);fill:var(--paper-2);font-size:11px;text-anchor:middle;dominant-baseline:middle}
+.draw{stroke-dasharray:1;stroke-dashoffset:0;animation:draw 1.2s var(--ease) both}
+@keyframes draw{from{stroke-dashoffset:1}}
+.fade{animation:fadein .8s ease both}
+@keyframes fadein{from{opacity:0}}
+.hand{transform-origin:200px 200px;transform-box:view-box}
+.hand-h{transform:rotate(240deg);animation:hour 1.6s var(--ease) 1.9s both}
+.hand-m{transform:rotate(720deg);animation:minute 1.6s var(--ease) 1.9s both}
+@keyframes hour{from{transform:rotate(0deg)}}
+@keyframes minute{from{transform:rotate(0deg)}}
+.orbit{transform-origin:200px 200px;transform-box:view-box;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.legend{list-style:none;margin:0;padding:0;display:grid}
+.legend li{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line-d)}
+.legend li:first-child{border-top:1px solid var(--line-d)}
+.legend .pp{font:600 22px/1 var(--f-head);min-width:3.2ch}
+.legend .what{color:var(--paper);font-size:15px}
+.legend .ru{color:var(--paper-2);font-size:13px;text-align:right}
+.legend .dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:8px;vertical-align:1px}
+.hero-sent{margin:16px 0 0;font:500 17px/1.4 var(--f-head);color:var(--paper)}
+.hero-sent u{text-decoration:none;padding:0 5px;border-radius:5px;color:var(--ink)}
+
+/* ---------- chat ---------- */
+.chat{background:var(--bg);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px;color:var(--paper);align-self:start}
+.chat-top{display:flex;justify-content:space-between;font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--paper-2);padding-bottom:8px;border-bottom:1px solid var(--line-d);margin-bottom:4px}
+.bub{max-width:86%;padding:11px 15px;border-radius:18px;font-size:15px;line-height:1.4}
+.bub.me{align-self:flex-end;background:var(--paper);color:var(--ink);border-bottom-right-radius:6px}
+.bub.her{align-self:flex-start;background:var(--card-d);border-bottom-left-radius:6px;font-family:var(--f-head)}
+.bub s{text-decoration:none;position:relative;opacity:.55}
+.bub s::after{content:"";position:absolute;left:-3px;right:-3px;top:54%;height:2px;background:var(--clay);border-radius:2px;transform-origin:left}
+.bub ins{text-decoration:none;display:inline-block;background:var(--am);color:var(--ink);padding:0 7px;border-radius:7px;margin-left:5px;font-weight:600}
+.bub ins.no{background:var(--paper);font-family:var(--f-body);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;padding:2px 8px}
+.chat.play .bub{animation:pop .5s var(--d,0s) cubic-bezier(.2,.8,.2,1) both}
+.chat.play .bub s::after{animation:strike .35s calc(var(--d,0s) + .55s) var(--ease) both}
+.chat.play .bub ins{animation:pop .4s calc(var(--d,0s) + .9s) cubic-bezier(.2,.8,.2,1) both}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.95)}}
+@keyframes strike{from{transform:scaleX(0)}}
+
+/* ---------- matryoshka ---------- */
+.mat{display:grid;gap:22px}
+@media (min-width:1000px){.mat{grid-template-columns:1.2fr 1fr;align-items:start;gap:44px}}
+.stage{position:relative;overflow:hidden;border-radius:20px;background:var(--white);border:1px solid var(--line);aspect-ratio:1/1.12;isolation:isolate}
+@media (min-width:600px){.stage{aspect-ratio:4/3.3}}
+.scene{position:absolute;inset:0;padding:16px;display:flex;flex-direction:column;gap:12px;opacity:0;visibility:hidden;transform-origin:0 0}
+@media (min-width:600px){.scene{padding:22px}}
+.scene.is-active,.scene.is-moving{visibility:visible}
+.scene.is-active{opacity:1}
+.sc-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.sc-k{font:600 clamp(22px,5.4vw,32px)/1 var(--f-head);letter-spacing:-.02em}
+.sc-s{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3)}
+.months{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:7px}
+@media (min-width:600px){.months{grid-template-columns:repeat(4,1fr);gap:9px}}
+.m{border:1px solid var(--line);border-radius:12px;padding:8px 10px;display:flex;flex-direction:column;justify-content:space-between;font:500 14px/1.1 var(--f-head);min-width:0}
+.m small{font:500 10px/1 var(--f-body);color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em}
+.m.is-t{background:var(--im-soft);border-color:var(--im);color:var(--im-ink)}
+.cal{flex:1;display:grid;grid-template-columns:repeat(7,1fr);grid-template-rows:auto repeat(5,1fr);gap:4px}
+@media (min-width:600px){.cal{gap:6px}}
+.cal .wd{font-size:10.5px;text-transform:uppercase;color:var(--ink-3);text-align:center;letter-spacing:.05em;padding-bottom:2px}
+.cal .d{border-radius:8px;background:var(--mist);padding:4px 6px;font:500 12px/1 var(--f-head);min-width:0}
+.cal .d.we{background:var(--am-soft)}
+.cal .d.x{background:transparent}
+.cal .d.is-t{background:var(--am);color:var(--ink)}
+.parts{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:8px}
+.part{border-radius:14px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;gap:6px;background:var(--mist);min-width:0}
+.part svg{width:34px;height:34px}
+.part b{display:block;font:500 clamp(15px,4vw,19px)/1.1 var(--f-head)}
+.part small{color:var(--ink-3);font-size:12px}
+.part.is-t{background:var(--am-soft);box-shadow:inset 0 0 0 2px var(--am)}
+.part.warn{background:var(--bg);color:var(--paper)}
+.part.warn small{color:var(--paper-2)}
+.flag{align-self:flex-start;background:var(--clay);color:#fff;font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:999px}
+.clockwrap{flex:1;display:grid;place-items:center;min-height:0}
+.clockwrap svg{height:100%;max-height:100%;width:auto;max-width:100%}
+.clk-h,.clk-m{transform-origin:120px 120px;transform-box:view-box}
+.clk-h{transform:rotate(240deg)}
+.scene.is-active .clk-h{animation:hour 1.4s var(--ease) .55s both}
+.scene.is-active .clk-m{animation:minute2 1.4s var(--ease) .55s both}
+@keyframes minute2{from{transform:rotate(-720deg)}}
+.gegen{stroke-dasharray:1;stroke-dashoffset:0}
+.scene.is-active .gegen{animation:draw .9s var(--ease) 2.1s both}
+.scene.is-active .gegen-t{animation:fadein .5s 2.6s both}
+.scene.is-active [data-target]{animation:tpulse 1.9s ease-in-out .9s infinite}
+@keyframes tpulse{50%{box-shadow:0 0 0 6px rgba(157,187,139,.45)}}
+.scene.is-active .cal .is-t,.scene.is-active .part.is-t{animation-name:tpulse2}
+@keyframes tpulse2{50%{box-shadow:0 0 0 6px rgba(220,198,138,.55)}}
+
+.ctrl{display:flex;align-items:center;gap:10px;margin-top:14px}
+.dots{display:flex;gap:6px;flex:1;justify-content:center}
+.dots button{width:30px;height:5px;border-radius:3px;background:var(--line);border:0;padding:0;cursor:pointer;transition:background .3s,width .3s}
+.dots button.on{background:var(--ink);width:44px}
+.stepn{font:500 13px var(--f-head);color:var(--ink-3);font-variant-numeric:tabular-nums;min-width:40px;text-align:right}
+.replay{display:none;align-items:center;gap:6px;background:none;border:0;cursor:pointer;font-size:14px;color:var(--ink-2);text-decoration:underline;text-underline-offset:4px;padding:0}
+.replay.show{display:inline-flex}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:16px}
+.crumb{padding:6px 12px;border-radius:999px;border:1px solid var(--line);font:500 13.5px/1 var(--f-head);color:var(--ink-3);transition:all .45s var(--ease)}
+.crumb.on{color:var(--ink);border-color:var(--ink)}
+.crumbs .sep{color:var(--line);font-size:13px}
+.final{margin:12px 0 0;font:500 16px/1.4 var(--f-head);color:var(--ink-2);transition:opacity .5s}
+.final.dim{opacity:.25}
+.final b{color:var(--ink);font-weight:600}
+
+.info{display:grid;gap:16px;transition:opacity .22s,transform .22s}
+.info.swap{opacity:0;transform:translateY(8px)}
+.info-top{display:flex;align-items:center;gap:14px}
+.info-title{font:500 20px/1.1 var(--f-head);text-transform:uppercase}
+.info-rule{margin:0;font-size:17px;line-height:1.5;color:var(--ink)}
+.ex{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.ex li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}
+.ex b{font:500 17px/1.3 var(--f-head)}
+.ex span{color:var(--ink-3);font-size:14px;text-align:right}
+.note{margin:0;background:var(--mist);border-radius:14px;padding:14px 16px;font-size:14.5px;color:var(--ink-2)}
+.note em{font-style:normal;display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:4px}
+
+/* ---------- tiles ---------- */
+.row-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:20px}
+.tiles{display:grid;grid-auto-flow:column;grid-auto-columns:84%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tiles::-webkit-scrollbar{display:none}
+@media (min-width:820px){.tiles{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible}}
+.tile{scroll-snap-align:start;position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/4.5;color:var(--paper);isolation:isolate}
+.tile::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.t-im{background:linear-gradient(165deg,#5A7A4E 0%,#2E4430 70%)}
+.t-am{background:linear-gradient(165deg,#9A8752 0%,#44492F 72%)}
+.t-um{background:linear-gradient(165deg,#617068 0%,#26332A 72%)}
+.tile > svg{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.tile .lab{position:absolute;left:18px;right:18px;bottom:16px}
+.lab b{display:block;font:500 19px/1.1 var(--f-head);text-transform:uppercase;letter-spacing:.01em}
+.lab span{display:block;margin-top:5px;font-size:13px;color:rgba(247,247,244,.78)}
+.flip{transform-box:fill-box;transform-origin:50% 0;animation:flip 4.5s var(--ease) infinite}
+@keyframes flip{0%,55%{transform:scaleY(1);opacity:1}72%{transform:scaleY(0);opacity:.4}73%,100%{transform:scaleY(1);opacity:1}}
+.spin-slow{transform-box:view-box;transform-origin:150px 160px;animation:spin 7s linear infinite}
+.spin-orbit{transform-box:view-box;transform-origin:150px 160px;animation:spin 16s linear infinite}
+.coda{margin:26px 0 0;display:grid;gap:6px;max-width:60ch;font-size:16px;color:var(--ink-2)}
+.coda p{margin:0}
+
+/* ---------- timeline ---------- */
+.tl-card{margin-top:26px;background:var(--bg);border-radius:20px;padding:16px;color:var(--paper)}
+@media (min-width:700px){.tl-card{padding:26px 28px}}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+@media (min-width:900px){.chips{flex-wrap:wrap}}
+.chip{flex:none;border:1px solid var(--line-d);background:transparent;color:var(--paper);border-radius:999px;padding:10px 17px;font:500 15px/1 var(--f-head);cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.chip:hover{border-color:var(--paper-2)}
+.chip[aria-pressed="true"]{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.tl-svg{display:block;width:100%;height:auto;margin-top:10px;overflow:visible}
+.tl-svg text{font-family:var(--f-head)}
+@media (max-width:640px){
+  .tl-svg #tlLab{font-size:32px}
+  .tl-svg #tlEvT{font-size:24px}
+  .tl-svg .tl-edge{font-size:22px}
+  .tl-svg #tlP1,.tl-svg #tlP2{r:12}
+}
+.tl-out{display:grid;gap:10px;background:var(--paper);color:var(--ink);border-radius:16px;padding:18px;margin-top:8px;transition:opacity .2s,transform .2s}
+.tl-out.swap{opacity:0;transform:translateY(6px)}
+@media (min-width:900px){.tl-out{grid-template-columns:1.2fr 1fr;gap:10px 40px;padding:24px 26px}.tl-out .tl-com{grid-row:1 / span 3;grid-column:2}}
+.tl-de{margin:0;font:500 clamp(19px,4.8vw,25px)/1.3 var(--f-head)}
+.tl-de b{font-weight:600;padding:0 6px;border-radius:6px}
+.tl-ru{margin:0;color:var(--ink-3)}
+.case{justify-self:start;font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;padding:5px 11px;border-radius:999px}
+.c-dat{background:var(--im-soft);color:var(--im-ink)}
+.c-akk{background:var(--am-soft);color:var(--am-ink)}
+.c-gen{background:var(--clay-soft);color:var(--clay-ink)}
+.tl-com{margin:0;color:var(--ink-2);font-size:15px;border-top:1px solid var(--line);padding-top:12px}
+@media (min-width:900px){.tl-com{border-top:0;padding-top:0;border-left:1px solid var(--line);padding-left:24px}}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 1.6s ease-out infinite}
+@keyframes pulse{from{transform:scale(.6);opacity:.9}to{transform:scale(2.2);opacity:0}}
+.chev{animation:chev 1.4s ease-in-out infinite}
+.chev:nth-child(2){animation-delay:.18s}.chev:nth-child(3){animation-delay:.36s}
+@keyframes chev{50%{opacity:.25}}
+
+/* ---------- traps ---------- */
+.acc{border-bottom:1px solid var(--line)}
+.acc:first-child{border-top:1px solid var(--line)}
+.acc summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:17px 0;cursor:pointer;font:500 13px/1.3 var(--f-body);text-transform:uppercase;letter-spacing:.06em}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .q{font-family:var(--f-head);font-size:15px;letter-spacing:.02em}
+.plus{position:relative;width:18px;height:18px;flex:none;transition:transform .3s var(--ease)}
+.plus::before,.plus::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:var(--ink);transform:translateY(-50%)}
+.plus::after{transform:translateY(-50%) rotate(90deg)}
+.acc[open] .plus{transform:rotate(45deg)}
+.acc-b{display:grid;gap:8px;padding:0 0 20px;animation:fadein .35s ease}
+.acc-b p{margin:0}
+.bad,.good{font:500 16px/1.35 var(--f-head);display:flex;gap:10px}
+.bad{color:var(--clay-ink)} .bad span{text-decoration:line-through;text-decoration-thickness:1.5px}
+.good{color:var(--im-ink)}
+.acc-b .why{color:var(--ink-2);font-size:15px;margin-top:4px}
+.trap-side{display:grid;gap:18px;align-content:start}
+@media (min-width:920px){.trap-side{position:sticky;top:90px}}
+.counter{background:var(--bg);color:var(--paper);border-radius:20px;padding:22px;display:grid;gap:4px}
+.counter b{font:600 clamp(64px,16vw,120px)/.9 var(--f-head);letter-spacing:-.04em}
+.counter span{color:var(--paper-2);font-size:14px}
+
+/* ---------- cheat sheet ---------- */
+.stages{display:grid;gap:10px}
+@media (min-width:920px){.stages{grid-template-columns:repeat(3,1fr)}}
+.stage-c{background:var(--bg);color:var(--paper);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:30px;min-height:240px}
+.stage-c header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.stage-c h3{margin:0;font:500 22px/1 var(--f-head);text-transform:uppercase}
+.cnt{border:1px solid rgba(247,247,244,.6);border-radius:999px;padding:5px 12px;font-size:12.5px;white-space:nowrap}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.pill{border:1px solid rgba(247,247,244,.5);border-radius:999px;padding:7px 13px;font-size:13px;line-height:1.2}
+.pill b{font:600 14px var(--f-head);margin-right:5px}
+
+/* ---------- quiz ---------- */
+.phone{max-width:390px;width:100%;margin-inline:auto}
+@media (min-width:700px){
+  .phone{background:#121412;border-radius:48px;padding:11px;box-shadow:0 30px 60px -20px rgba(0,0,0,.35)}
+  .phone-in{border-radius:38px!important;padding:56px 22px 28px!important;min-height:600px;border:0!important}
+  .phone-in::before{content:"";position:absolute;top:13px;left:50%;width:100px;height:28px;border-radius:16px;background:#121412;transform:translateX(-50%)}
+}
+.phone-in{position:relative;background:var(--white);border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:16px}
+.q-top{display:flex;justify-content:space-between;font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3)}
+.q-bar{height:4px;background:var(--mist);border-radius:2px;overflow:hidden}
+.q-bar i{display:block;height:100%;background:var(--bg);width:0;transition:width .5s var(--ease)}
+.q-text{margin:6px 0 0;font:500 22px/1.35 var(--f-head)}
+.q-text .gap{display:inline-block;min-width:64px;border-bottom:2px solid var(--ink);text-align:center;transition:all .3s}
+.q-text .gap.ok{border-color:var(--im-ink);color:var(--im-ink)}
+.q-text .gap.no{border-color:var(--clay);color:var(--clay-ink)}
+.q-ru{margin:0;color:var(--ink-3);font-size:14px}
+.opts{display:grid;gap:8px}
+.opt{border:1px solid var(--line);background:var(--white);border-radius:999px;padding:14px 18px;font:500 17px/1 var(--f-head);text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:all .2s}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt:disabled{cursor:default}
+.opt.ok{background:var(--im-soft);border-color:var(--im);color:var(--im-ink)}
+.opt.no{background:var(--clay-soft);border-color:var(--clay);color:var(--clay-ink)}
+.fb{margin:0;background:var(--mist);border-radius:14px;padding:13px 15px;font-size:14.5px;color:var(--ink-2);animation:pop .35s both}
+.fb b{color:var(--ink)}
+.q-end{display:grid;gap:14px;text-align:left}
+.q-score{font:600 72px/.9 var(--f-head);letter-spacing:-.04em}
+.q-score small{font-size:28px;color:var(--ink-3)}
+
+/* ---------- platform (ad) ---------- */
+.ad{position:relative}
+.vrail{display:none}
+@media (min-width:1320px){
+  .vrail{display:block;position:absolute;left:-150px;top:40px;writing-mode:vertical-rl;transform:rotate(180deg);font:700 150px/1 var(--f-head);color:var(--leaf);letter-spacing:-.03em;pointer-events:none;user-select:none;white-space:nowrap}
+}
+.ad-stack{position:relative;z-index:1;display:flex;flex-direction:column;gap:14px}
+.linen{position:relative;border-radius:20px;padding:clamp(18px,5vw,54px);background:
+  radial-gradient(120% 90% at 15% 0%,rgba(255,255,255,.22),transparent 60%),
+  radial-gradient(90% 90% at 100% 100%,rgba(0,0,0,.28),transparent 60%),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+  #8E8A80;display:grid;place-items:center;overflow:hidden}
+.linen.wood{background:
+  radial-gradient(120% 90% at 15% 0%,rgba(255,255,255,.18),transparent 60%),
+  repeating-linear-gradient(92deg,rgba(0,0,0,.05) 0 3px,transparent 3px 11px),
+  linear-gradient(170deg,#B98A58,#8A5E36)}
+.laptop{width:100%;max-width:720px;filter:drop-shadow(0 26px 30px rgba(0,0,0,.35))}
+.laptop .scr{background:#0E100E;border-radius:14px 14px 4px 4px;padding:2.4% 2.4% 3.2%;position:relative}
+.laptop .scr::before{content:"";position:absolute;top:1%;left:50%;width:9%;height:1.4%;min-height:4px;background:#000;border-radius:0 0 6px 6px;transform:translateX(-50%)}
+.laptop video,.tablet video{width:100%;height:auto;border-radius:3px;background:#000}
+.laptop .base{height:clamp(10px,2vw,18px);margin:0 -7%;background:linear-gradient(#D6D6D2,#8E8E8A);border-radius:2px 2px 20px 20px;position:relative}
+.laptop .base::before{content:"";position:absolute;top:0;left:50%;width:16%;height:40%;background:#A9A9A5;border-radius:0 0 8px 8px;transform:translateX(-50%)}
+.tablet{width:100%;max-width:640px;background:#111;border-radius:26px;padding:14px;box-shadow:0 30px 50px -18px rgba(0,0,0,.45);transform:perspective(1600px) rotateX(14deg) rotateZ(-5deg)}
+.tablet video{border-radius:12px}
+.cap{margin:12px 0 0;font-size:13px;color:var(--ink-3)}
+
+.pains{border-top:1px solid var(--line)}
+.pain{display:grid;gap:10px;padding:20px 0;border-bottom:1px solid var(--line)}
+@media (min-width:820px){.pain{grid-template-columns:1fr 1fr;gap:48px}}
+.pain-q{margin:0;font:500 18px/1.35 var(--f-head)}
+.pain-a{margin:0;color:var(--ink-2)}
+.pain-a em{display:block;font-style:normal;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--im-ink);margin-bottom:4px;font-weight:600}
+
+.stats{display:grid;gap:0}
+@media (min-width:820px){.stats{grid-template-columns:1fr 1fr;column-gap:48px}}
+.count{font-variant-numeric:tabular-nums}
+
+.show{display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:2px}
+.show::-webkit-scrollbar{display:none}
+@media (min-width:700px){.show{grid-auto-columns:46%}}
+@media (min-width:1100px){.show{grid-auto-columns:32%}}
+.shot{scroll-snap-align:start;position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3.4;background:var(--mist);margin:0}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:left top;transition:transform .6s var(--ease)}
+.shot:hover img{transform:scale(1.04)}
+.shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(20,28,22,.86))}
+.shot figcaption{position:absolute;left:16px;right:16px;bottom:14px;z-index:1;color:var(--paper)}
+.shot figcaption b{display:block;font:500 18px/1.1 var(--f-head);text-transform:uppercase}
+.shot figcaption span{display:block;margin-top:4px;font-size:13px;color:rgba(247,247,244,.8)}
+
+.devices{display:grid;gap:10px;margin-top:10px}
+@media (min-width:920px){.devices{grid-template-columns:1fr 1fr}}
+
+.reviews{display:grid;grid-auto-flow:column;grid-auto-columns:88%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;align-items:start}
+.reviews::-webkit-scrollbar{display:none}
+@media (min-width:700px){.reviews{grid-auto-columns:48%}}
+@media (min-width:1100px){.reviews{grid-auto-columns:32%}}
+.rvw{scroll-snap-align:start;background:#1B1F1C;border-radius:16px;padding:10px;margin:0}
+.rvw img{width:100%;border-radius:10px}
+
+.price .h2{margin-bottom:6px}
+.price-list .row b{font-size:15px}
+.price-list .row.total b{font:600 22px/1 var(--f-head)}
+.buy-actions{display:grid;gap:12px;margin-top:22px}
+.small{font-size:13px;color:var(--ink-3);margin:0}
+.contact .phone-in{justify-content:flex-start}
+.contact h3{margin:6px 0 0;font:500 26px/1.05 var(--f-head);text-transform:uppercase}
+.handle{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:14px 0;font-size:14px;color:var(--ink-3)}
+.handle b{color:var(--ink);font-weight:600;font-size:16px}
+.contact .spacer{flex:1}
+
+/* ---------- sticky CTA + footer ---------- */
+.sticky-cta{position:fixed;left:16px;right:16px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--ink);color:var(--paper);border-radius:999px;padding:8px 8px 8px 20px;text-decoration:none;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);transform:translateY(160%);transition:transform .45s var(--ease)}
+.sticky-cta.show{transform:none}
+.sticky-cta span{font-size:14px}
+.sticky-cta b{background:var(--am);color:var(--ink);border-radius:999px;padding:10px 16px;font:600 14px/1 var(--f-body);white-space:nowrap}
+@media (min-width:1000px){.sticky-cta{display:none}}
+.foot{padding-block:10px 110px;color:var(--paper-2);font-size:13px}
+@media (min-width:1000px){.foot{padding-bottom:40px}}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center}
+.foot a{color:var(--paper-2)}
+
+
+/* ---------- v2: extra motion ---------- */
+.progress{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;height:3px;z-index:60;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--im),var(--am));pointer-events:none}
+.ticker{overflow:hidden;display:grid;gap:4px;padding-block:8px;margin-inline:-16px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+@media (min-width:700px){.ticker{margin-inline:-24px}}
+.tk-row{display:flex;width:max-content;animation:tk 55s linear infinite}
+.tk-row.rev{animation-direction:reverse;animation-duration:70s}
+.ticker .tk-row span{font:500 clamp(28px,6.4vw,54px)/1.08 var(--f-head);text-transform:uppercase;color:var(--paper);padding-inline:.32em;white-space:nowrap;letter-spacing:-.015em}
+.ticker .tk-row span i{font-style:normal;color:var(--am)}
+.ticker .tk-row span.sep{color:var(--im);padding-inline:.1em}
+.ticker .tk-row.rev span{color:transparent;-webkit-text-stroke:1px rgba(247,247,244,.5)}
+.ticker .tk-row.rev span i{color:transparent;-webkit-text-stroke:1px var(--am)}
+.ticker .tk-row.rev span.sep{-webkit-text-stroke:0;color:var(--leaf)}
+@keyframes tk{to{transform:translateX(-50%)}}
+
+.h2 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.h2 .w>span{display:inline-block}
+.h2.play .w>span{animation:rise .85s var(--ease) both;animation-delay:calc(var(--i) * 70ms)}
+.legend li{animation:rowin .6s var(--ease) both}
+.legend li:nth-child(1){animation-delay:1.2s}.legend li:nth-child(2){animation-delay:1.5s}.legend li:nth-child(3){animation-delay:2.2s}
+.hero-sent{animation:fadein .8s 2.8s both}
+.info .ex li{animation:rowin .5s var(--ease) both;animation-delay:calc(var(--i) * 90ms + .12s)}
+.info .note{animation:fadein .6s .45s both}
+@keyframes rowin{from{opacity:0;transform:translateX(-12px)}}
+.tilt{transition:transform .5s var(--ease);will-change:transform}
+.opt.no{animation:shake .42s}
+.opt.ok{animation:okpop .4s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+@keyframes okpop{50%{transform:scale(1.03)}}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:70}
+
+.hear{display:inline-flex;align-items:center;gap:7px;border:1px solid currentColor;background:transparent;border-radius:999px;padding:7px 13px;font:500 13px/1 var(--f-body);cursor:pointer;opacity:.85;transition:opacity .2s,background .2s}
+.hear:hover{opacity:1}
+.hear svg{width:15px;height:15px}
+.hear.on{animation:hearpulse .9s ease-in-out infinite}
+@keyframes hearpulse{50%{opacity:.4}}
+.tl-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+
+/* day / sky */
+.day-wrap{display:grid;gap:12px}
+@media (min-width:960px){.day-wrap{grid-template-columns:1.55fr 1fr;align-items:stretch}}
+.sky{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/11;background:#1b2530}
+@media (min-width:960px){.sky{aspect-ratio:16/9.4}}
+.sky svg{position:absolute;inset:0;width:100%;height:100%}
+.sky-lab{position:absolute;left:18px;top:14px;font:600 clamp(24px,6vw,40px)/1 var(--f-head);color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.35);transition:opacity .3s}
+.sky-lab small{display:block;font:500 12px/1.4 var(--f-body);text-transform:uppercase;letter-spacing:.08em;opacity:.85;margin-top:6px}
+.range{-webkit-appearance:none;appearance:none;width:100%;height:46px;background:transparent;cursor:pointer;margin:6px 0 0}
+.range::-webkit-slider-runnable-track{height:8px;border-radius:4px;background:linear-gradient(90deg,#1C2A36 0%,#1C2A36 18%,#F0B98C 27%,#DDE8E6 40%,#E6EEE8 58%,#EBD3AE 72%,#E08A5E 81%,#1C2A36 92%)}
+.range::-moz-range-track{height:8px;border-radius:4px;background:linear-gradient(90deg,#1C2A36 0%,#1C2A36 18%,#F0B98C 27%,#DDE8E6 40%,#E6EEE8 58%,#EBD3AE 72%,#E08A5E 81%,#1C2A36 92%)}
+.range::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:var(--paper);border:3px solid var(--ink);margin-top:-11px;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.range::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--paper);border:3px solid var(--ink)}
+.range-lab{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-3);font-variant-numeric:tabular-nums;padding-inline:4px}
+.day-read{background:var(--bg);color:var(--paper);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.clock-d{font:600 clamp(54px,13vw,88px)/.9 var(--f-head);font-variant-numeric:tabular-nums;letter-spacing:-.04em}
+.say{margin:0;font:500 clamp(21px,5vw,26px)/1.2 var(--f-head)}
+.say b{background:var(--am);color:var(--ink);padding:0 7px;border-radius:7px;font-weight:600}
+.off{margin:0;color:var(--paper-2);font-size:14px}
+.dparts{display:flex;flex-wrap:wrap;gap:6px}
+.dpart{border:1px solid var(--line-d);background:transparent;color:var(--paper);border-radius:999px;padding:7px 12px;font:500 13px/1 var(--f-head);cursor:pointer;transition:all .3s}
+.dpart.on{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.dpart.on.nacht{background:var(--clay);border-color:var(--clay);color:#fff}
+.dcom{margin:0;color:var(--paper-2);font-size:14.5px;min-height:3em}
+.halb{margin:0;background:var(--am);color:var(--ink);border-radius:12px;padding:10px 12px;font-size:13.5px;transition:opacity .3s,transform .3s}
+.halb.off2{opacity:0;transform:translateY(6px);pointer-events:none}
+.day-read .spacer{flex:1}
+
+/* guides marquee */
+.gmq{margin-top:30px;display:grid;gap:8px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.gmq .tk-row{animation-duration:60s}
+.gmq .tk-row.rev{animation-duration:75s}
+.gpill{flex:none;margin-right:8px;border:1px solid var(--line);border-radius:999px;padding:9px 15px;font:500 14px/1 var(--f-head);color:var(--ink-2);background:var(--white);white-space:nowrap}
+.gpill.here{background:var(--am);border-color:var(--am);color:var(--ink);font-weight:600}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="leaf" viewBox="0 0 100 100"><path d="M0 100V46A46 46 0 0 1 46 0H100V34H56A22 22 0 0 0 34 56V100Z"/></symbol>
+  <symbol id="i-l" viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-r" viewBox="0 0 16 16"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<div class="progress" id="progress"></div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#tema"><img src="media/logo-light.png" alt="" width="30" height="30">STELLAS</a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#matreshka">Матрешка</a>
+      <a href="#sutki">Сутки</a>
+      <a href="#linia">Линия времени</a>
+      <a href="#lovushki">Ловушки</a>
+      <a href="#test">Тест</a>
+      <a href="#platforma">Платформа</a>
+    </nav>
+    <a class="btn btn--sm btn--paper" href="#platforma">Платформа A0–C1 <span class="arr">→</span></a>
+  </div>
+</header>
+
+<main class="wrap stack">
+
+  <!-- HERO -->
+  <section class="panel" id="tema">
+    <div class="hero-grid">
+      <h1 class="hero-word" aria-label="Am, um, im"><span class="am">Am</span><span>um</span><span class="im">im</span></h1>
+      <div class="hero-side">
+        <p class="eyebrow">Немецкий · предлоги времени · A1–B1</p>
+        <a class="btn" href="#klub">Разобрать тему <span class="arr">→</span></a>
+        <p class="lead">Почему am Montag, но im Mai. Почему um 8, но in der Nacht. И чем seit отличается от vor. Объясняю на картинках. Семь минут.</p>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <svg class="rings" id="rings" viewBox="0 0 400 400" role="img" aria-label="Три кольца: месяцы, дни недели и часы. Выделены май, понедельник и восемь часов."></svg>
+      <div>
+        <ul class="legend">
+          <li><span class="pp" style="color:var(--im)">im</span><span class="what"><i class="dot" style="background:var(--im)"></i>Mai</span><span class="ru">месяц</span></li>
+          <li><span class="pp" style="color:var(--am)">am</span><span class="what"><i class="dot" style="background:var(--am)"></i>Montag</span><span class="ru">день</span></li>
+          <li><span class="pp" style="color:var(--paper)">um</span><span class="what"><i class="dot" style="background:var(--paper)"></i>8 Uhr</span><span class="ru">время</span></li>
+        </ul>
+        <p class="hero-sent">Ich habe <u style="background:var(--am)">am</u> Montag <u style="background:var(--paper)">um</u> 8 Uhr einen Termin.</p>
+      </div>
+    </div>
+
+    <div class="rows">
+      <div class="row">Тема <b>Temporale Präpositionen</b></div>
+      <div class="row">Уровень <b>A1–B1</b></div>
+      <div class="row">Падежи <b>Dativ · Akkusativ · Genitiv</b></div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true"><div class="tk-row" id="tk1"></div><div class="tk-row rev" id="tk2"></div></div>
+
+  <!-- STORY 1 -->
+  <section class="panel" id="klub">
+    <div class="split">
+      <div>
+        <div class="head">
+          <p class="eyebrow">Как это было</p>
+          <h2 class="h2">У нас был разговорный клуб</h2>
+        </div>
+        <div class="story">
+          <p>У нас был разговорный клуб. Для тех, кто живет в Германии. За все время - больше ста человек.</p>
+          <p>Приходит девушка. Три года в Лейпциге. Работает, водит сына в Kita, с соседями здоровается.</p>
+          <p>Говорю, когда у тебя термин у зубного? Говорит, <span class="de">in Montag um halb neun</span>.</p>
+          <p>Говорю, am Montag. Говорит, почему am? Говорю, потому что день. Говорит, а в мае? Говорю, im Mai. Говорит, а в 2026? Говорю, просто 2026. Без ничего.</p>
+          <p>Она посмотрела на меня как на налогового инспектора.</p>
+          <p><b>Говорит, это рандом. Говорю, не рандом. Сейчас нарисую.</b></p>
+        </div>
+      </div>
+      <div class="chat" id="chat" aria-label="Переписка из клуба">
+        <div class="chat-top"><span>Разговорный клуб</span><span>вт 19:00</span></div>
+        <div class="bub me" style="--d:.1s">Когда у тебя термин?</div>
+        <div class="bub her" style="--d:.5s"><s>in</s><ins>am</ins> Montag um halb neun</div>
+        <div class="bub me" style="--d:1.5s">А в мае?</div>
+        <div class="bub her" style="--d:1.9s"><s>in</s><ins>im</ins> Mai</div>
+        <div class="bub me" style="--d:2.9s">А в 2026?</div>
+        <div class="bub her" style="--d:3.3s"><s>in</s> 2026 <ins class="no">без предлога</ins></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATRYOSHKA -->
+  <section class="band" id="matreshka">
+    <div class="leaves" aria-hidden="true">
+      <svg class="leaf l1"><use href="#leaf"/></svg>
+      <svg class="leaf l2"><use href="#leaf"/></svg>
+    </div>
+    <div class="panel">
+      <div class="head">
+        <p class="eyebrow">Нарисовал вот это</p>
+        <h2 class="h2">Время - это матрешка</h2>
+        <p class="lead">Год держит внутри месяцы. Месяц - дни. День - утро и вечер. Утро - часы. Чем мельче кусок времени, тем точнее предлог. Листай.</p>
+      </div>
+      <div class="mat">
+        <div>
+          <div class="stage" id="stage" aria-roledescription="слайды">
+            <div class="scene is-active" data-i="0">
+              <div class="sc-head"><span class="sc-k">2026</span><span class="sc-s">Год</span></div>
+              <div class="months" id="months"></div>
+            </div>
+            <div class="scene" data-i="1" aria-hidden="true">
+              <div class="sc-head"><span class="sc-k">Mai 2026</span><span class="sc-s">Месяц</span></div>
+              <div class="cal" id="cal"></div>
+            </div>
+            <div class="scene" data-i="2" aria-hidden="true">
+              <div class="sc-head"><span class="sc-k">Montag, 4. Mai</span><span class="sc-s">День</span></div>
+              <div class="parts">
+                <div class="part is-t" data-target>
+                  <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 24h26M9 24a8 8 0 0 1 16 0M17 8v3M8 13l2 2M26 13l-2 2"/></svg>
+                  <div><b>am Morgen</b><small>утром</small></div>
+                </div>
+                <div class="part">
+                  <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="17" cy="17" r="6"/><path d="M17 3v4M17 27v4M3 17h4M27 17h4M7 7l3 3M24 24l3 3M27 7l-3 3M10 24l-3 3"/></svg>
+                  <div><b>am Mittag</b><small>в обед</small></div>
+                </div>
+                <div class="part">
+                  <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 22h26M9 22a8 8 0 0 1 16 0M4 27h26M17 12v-3"/></svg>
+                  <div><b>am Abend</b><small>вечером</small></div>
+                </div>
+                <div class="part warn">
+                  <span class="flag">исключение</span>
+                  <div><b>in der Nacht</b><small>ночью</small></div>
+                </div>
+              </div>
+            </div>
+            <div class="scene" data-i="3" aria-hidden="true">
+              <div class="sc-head"><span class="sc-k">8:00</span><span class="sc-s">Время</span></div>
+              <div class="clockwrap">
+                <svg viewBox="0 0 240 240" aria-hidden="true">
+                  <circle cx="120" cy="120" r="104" fill="var(--mist)"/>
+                  <g id="clkTicks"></g>
+                  <path class="gegen" pathLength="1" d="" id="gegenArc" fill="none" stroke="var(--am)" stroke-width="7" stroke-linecap="round"/>
+                  <text class="gegen-t" x="44" y="178" font-size="12" font-family="Onest,sans-serif" fill="var(--am-ink)" font-weight="600">gegen 8</text>
+                  <line class="clk-m" x1="120" y1="120" x2="120" y2="42" stroke="var(--ink-3)" stroke-width="3" stroke-linecap="round"/>
+                  <line class="clk-h" x1="120" y1="120" x2="120" y2="66" stroke="var(--ink)" stroke-width="6" stroke-linecap="round"/>
+                  <circle cx="120" cy="120" r="6" fill="var(--ink)"/>
+                  <text x="120" y="160" text-anchor="middle" font-size="20" font-family="Onest,sans-serif" font-weight="600" fill="var(--ink)">um 8</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="ctrl">
+            <button class="circ" id="mPrev" aria-label="Назад"><svg><use href="#i-l"/></svg></button>
+            <div class="dots" id="mDots"></div>
+            <span class="stepn" id="mNum">1 / 4</span>
+            <button class="circ" id="mNext" aria-label="Дальше"><svg><use href="#i-r"/></svg></button>
+          </div>
+          <div class="crumbs" id="crumbs" aria-hidden="true"></div>
+          <p class="final dim" id="final">Am Montag, dem 4. Mai, habe ich <b>um 8 Uhr</b> einen Termin beim Zahnarzt.</p>
+          <button class="replay" id="mReplay">↺ Еще раз</button>
+        </div>
+        <div class="info" id="info" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IM AM UM TILES -->
+  <section class="panel">
+    <div class="row-head">
+      <div class="head" style="margin-bottom:0">
+        <p class="eyebrow">Три картинки вместо таблицы</p>
+        <h2 class="h2">Комната, лист, циферблат</h2>
+      </div>
+      <div class="arrows">
+        <button class="circ" data-scroll="#tiles" data-dir="-1" aria-label="Назад"><svg><use href="#i-l"/></svg></button>
+        <button class="circ" data-scroll="#tiles" data-dir="1" aria-label="Дальше"><svg><use href="#i-r"/></svg></button>
+      </div>
+    </div>
+    <div class="tiles" id="tiles">
+      <article class="tile t-im">
+        <svg viewBox="0 0 300 340" aria-hidden="true">
+          <path d="M80 250V120a24 24 0 0 1 24-24h52M188 96h8a24 24 0 0 1 24 24v130" fill="none" stroke="rgba(247,247,244,.8)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M70 250h160" stroke="rgba(247,247,244,.8)" stroke-width="3" stroke-linecap="round"/>
+          <text x="104" y="128" fill="rgba(247,247,244,.55)" font-family="Onest,sans-serif" font-size="14">Mai</text>
+          <circle r="9" fill="var(--im)"><animateMotion dur="6s" repeatCount="indefinite" path="M110 225 C 140 170, 190 230, 195 160 S 130 150, 110 225"/></circle>
+          <text x="150" y="80" text-anchor="middle" fill="var(--im)" font-family="Onest,sans-serif" font-size="30" font-weight="600">IM</text>
+        </svg>
+        <div class="lab"><b>IM - внутри</b><span>im Mai · im Sommer · im Jahr 2026</span></div>
+      </article>
+      <article class="tile t-am">
+        <svg viewBox="0 0 300 340" aria-hidden="true">
+          <rect x="85" y="100" width="130" height="150" rx="14" fill="rgba(247,247,244,.92)"/>
+          <text x="150" y="190" text-anchor="middle" fill="#6B5A2A" font-family="Onest,sans-serif" font-size="64" font-weight="600">5</text>
+          <text x="150" y="222" text-anchor="middle" fill="#8A7B55" font-family="Onest,sans-serif" font-size="13" letter-spacing="2">DIENSTAG</text>
+          <g class="flip">
+            <rect x="85" y="100" width="130" height="150" rx="14" fill="#FFFFFF"/>
+            <rect x="85" y="100" width="130" height="34" rx="14" fill="var(--am)"/>
+            <rect x="85" y="120" width="130" height="14" fill="var(--am)"/>
+            <text x="150" y="190" text-anchor="middle" fill="#141614" font-family="Onest,sans-serif" font-size="64" font-weight="600">4</text>
+            <text x="150" y="222" text-anchor="middle" fill="#7F857D" font-family="Onest,sans-serif" font-size="13" letter-spacing="2">MONTAG</text>
+          </g>
+          <rect x="115" y="92" width="8" height="18" rx="4" fill="#2B392D"/><rect x="177" y="92" width="8" height="18" rx="4" fill="#2B392D"/>
+          <text x="150" y="72" text-anchor="middle" fill="var(--am)" font-family="Onest,sans-serif" font-size="30" font-weight="600">AM</text>
+        </svg>
+        <div class="lab"><b>AM - на листе</b><span>am Montag · am 4. Mai · am Abend</span></div>
+      </article>
+      <article class="tile t-um">
+        <svg viewBox="0 0 300 340" aria-hidden="true">
+          <circle cx="150" cy="160" r="96" fill="none" stroke="rgba(247,247,244,.25)" stroke-width="1.5" stroke-dasharray="3 7"/>
+          <g class="spin-orbit"><circle cx="150" cy="64" r="7" fill="var(--paper)"/></g>
+          <circle cx="150" cy="160" r="70" fill="rgba(247,247,244,.92)"/>
+          <g stroke="#2B392D" stroke-width="3" stroke-linecap="round">
+            <line x1="150" y1="98" x2="150" y2="106"/><line x1="212" y1="160" x2="204" y2="160"/><line x1="150" y1="222" x2="150" y2="214"/><line x1="88" y1="160" x2="96" y2="160"/>
+          </g>
+          <line x1="150" y1="160" x2="150" y2="124" stroke="#141614" stroke-width="6" stroke-linecap="round" transform="rotate(240 150 160)"/>
+          <g class="spin-slow"><line x1="150" y1="160" x2="150" y2="104" stroke="#7F857D" stroke-width="3" stroke-linecap="round"/></g>
+          <circle cx="150" cy="160" r="5" fill="#141614"/>
+          <text x="150" y="44" text-anchor="middle" fill="var(--paper)" font-family="Onest,sans-serif" font-size="30" font-weight="600">UM</text>
+        </svg>
+        <div class="lab"><b>UM - вокруг</b><span>um 8 Uhr · um halb neun · um Mitternacht</span></div>
+      </article>
+    </div>
+    <div class="coda">
+      <p>Она сфотографировала экран.</p>
+      <p>Через неделю пришла и говорит: am Montag um halb neun. Сама.</p>
+      <p>Термин, кстати, перенесли</p>
+    </div>
+  </section>
+
+  <!-- DAY SLIDER -->
+  <section class="panel" id="sutki">
+    <div class="head">
+      <p class="eyebrow">Части дня и часы</p>
+      <h2 class="h2">Двигай солнце</h2>
+      <p class="lead">Тяни ползунок. Небо меняется - предлог тоже. Утро, обед, вечер - am. Ночь - in der. Время на часах - um.</p>
+    </div>
+    <div class="day-wrap">
+      <div>
+        <div class="sky" id="sky">
+          <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop id="skyTop" offset="0" stop-color="#8FB3CF"/><stop id="skyBot" offset="1" stop-color="#DDE8E6"/></linearGradient>
+              <radialGradient id="sunGlow"><stop offset="0" stop-color="#FBE3A6" stop-opacity=".85"/><stop offset="1" stop-color="#FBE3A6" stop-opacity="0"/></radialGradient>
+              <mask id="moonM"><circle cx="0" cy="0" r="19" fill="#fff"/><circle cx="9" cy="-7" r="17" fill="#000"/></mask>
+            </defs>
+            <rect width="800" height="340" fill="url(#skyG)"/>
+            <g id="stars"></g>
+            <g id="sunG"><circle r="80" fill="url(#sunGlow)"/><circle r="25" fill="#F7D88E"/></g>
+            <g id="moonG"><circle r="19" fill="#EEF0E6" mask="url(#moonM)"/></g>
+            <path class="hill" data-d="#7E9A70" data-n="#1E2A26" d="M0 238C120 196 230 212 340 236S580 196 800 226V340H0Z"/>
+            <path class="hill" data-d="#5B7752" data-n="#17211D" d="M0 276C150 244 270 262 410 278S650 246 800 266V340H0Z"/>
+            <g class="hill-g" data-d="#2E4430" data-n="#0F1714" transform="translate(560 226)">
+              <path d="M0 26L20 8 40 26V50H0Z"/><path d="M52 50L64 16 76 50Z"/><path d="M-26 50L-16 24-6 50Z"/>
+            </g>
+            <rect id="win" x="575" y="258" width="10" height="10" rx="1.5" fill="#F7D88E" opacity="0"/>
+            <path class="hill" data-d="#2B392D" data-n="#0C1310" d="M0 308C200 290 330 300 470 312S700 294 800 304V340H0Z"/>
+          </svg>
+          <div class="sky-lab" id="skyLab">am Morgen<small>утром</small></div>
+        </div>
+        <input type="range" class="range" id="dRange" min="0" max="95" step="1" value="34" aria-label="Время суток">
+        <div class="range-lab" aria-hidden="true"><span>0:00</span><span>6:00</span><span>12:00</span><span>18:00</span><span>24:00</span></div>
+      </div>
+      <div class="day-read" aria-live="polite">
+        <div class="clock-d" id="dClock">08:30</div>
+        <p class="say" id="dSay">um <b>halb neun</b></p>
+        <p class="off" id="dOff">Официально: um 8:30 Uhr</p>
+        <div class="dparts" id="dParts"></div>
+        <p class="dcom" id="dCom"></p>
+        <p class="halb off2" id="dHalb"><b>Halb neun = 8:30.</b> Половина ДО девяти. Немцы считают до следующего часа. На этом сыпались все в клубе.</p>
+        <div class="spacer"></div>
+        <button class="hear" id="dHear" type="button"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 6h3l4-3v10l-4-3H2zM11.5 5.5a3.5 3.5 0 0 1 0 5M13.5 3.5a6.5 6.5 0 0 1 0 9"/></svg>Hören</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="band" id="linia">
+    <div class="leaves" aria-hidden="true">
+      <svg class="leaf l3"><use href="#leaf"/></svg>
+    </div>
+    <div class="panel">
+      <div class="split">
+        <div class="head" style="margin-bottom:0">
+          <p class="eyebrow">Вторая встреча</p>
+          <h2 class="h2">Vor, seit, für и компания</h2>
+        </div>
+        <div class="story">
+          <p>Через неделю приходит мужчина. Инженер. Пять лет в Германии.</p>
+          <p>Говорит, <span class="de">ich habe in Deutschland seit fünf Jahren gewohnt</span>.</p>
+          <p>Говорю, а сейчас где живешь? Говорит, тут. Говорю, тогда wohne. Говорит, но пять лет - это же прошлое.</p>
+          <p>Говорю, seit - это не прошлое. Это из прошлого до сих пор.</p>
+          <p>Он подумал. Говорит, то есть я до сих пор живу в Германии. Говорю, судя по всему, да.</p>
+          <p><b>Нарисовал ему линию.</b></p>
+        </div>
+      </div>
+
+      <div class="tl-card">
+        <div class="chips" id="chips" role="group" aria-label="Выбери предлог"></div>
+        <svg class="tl-svg" id="tl" viewBox="0 0 600 232" role="img" aria-label="Линия времени: прошлое слева, сейчас в центре, будущее справа">
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F7F7F4"/></marker>
+            <marker id="ax" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="rgba(247,247,244,.45)"/></marker>
+          </defs>
+          <g id="tlTicks"></g>
+          <line x1="24" y1="150" x2="582" y2="150" stroke="rgba(247,247,244,.45)" stroke-width="2" marker-end="url(#ax)"/>
+          <line x1="300" y1="58" x2="300" y2="150" stroke="rgba(247,247,244,.5)" stroke-width="1.5" stroke-dasharray="4 5"/>
+          <rect x="258" y="30" width="84" height="28" rx="14" fill="#F7F7F4"/>
+          <text x="300" y="49" text-anchor="middle" font-size="14" font-weight="600" fill="#141614" letter-spacing="1.5">JETZT</text>
+          <rect id="tlEv" x="300" y="84" width="0" height="36" rx="10" fill="#4A5E4C" opacity="0"/>
+          <text id="tlEvT" x="300" y="107" text-anchor="middle" font-size="16" fill="#F7F7F4" opacity="0"></text>
+          <rect id="tlSeg" x="300" y="141" width="0" height="18" rx="9" fill="var(--im)" opacity="0"/>
+          <path id="tlArr" d="M300 150Q300 70 300 146" fill="none" stroke="#F7F7F4" stroke-width="2" stroke-dasharray="5 6" marker-end="url(#ah)" opacity="0"/>
+          <g id="tlPulse" opacity="0"><circle class="pulse" cx="300" cy="150" r="10" fill="none" stroke="var(--im)" stroke-width="3"/><circle cx="300" cy="150" r="7" fill="var(--im)"/></g>
+          <line id="tlStop" x1="300" y1="130" x2="300" y2="170" stroke="#F7F7F4" stroke-width="5" stroke-linecap="round" opacity="0"/>
+          <g id="tlOpen" opacity="0"><path class="chev" d="M0 142l8 8-8 8" fill="none" stroke="#F7F7F4" stroke-width="2.5"/><path class="chev" d="M10 142l8 8-8 8" fill="none" stroke="#F7F7F4" stroke-width="2.5"/><path class="chev" d="M20 142l8 8-8 8" fill="none" stroke="#F7F7F4" stroke-width="2.5"/></g>
+          <circle id="tlP1" cx="300" cy="150" r="9" fill="#F7F7F4" stroke="#2B392D" stroke-width="3" opacity="0"/>
+          <circle id="tlP2" cx="300" cy="150" r="9" fill="#F7F7F4" stroke="#2B392D" stroke-width="3" opacity="0"/>
+          <text id="tlLab" x="300" y="194" text-anchor="middle" font-size="19" font-weight="600" fill="#F7F7F4"></text>
+          <text class="tl-edge" x="26" y="226" font-size="14" fill="rgba(247,247,244,.55)">← прошлое</text>
+          <text class="tl-edge" x="580" y="226" text-anchor="end" font-size="14" fill="rgba(247,247,244,.55)">будущее →</text>
+        </svg>
+        <div class="tl-out" id="tlOut" aria-live="polite">
+          <p class="tl-de" id="tlDe"></p>
+          <p class="tl-ru" id="tlRu"></p>
+          <div class="tl-meta"><span class="case" id="tlCase"></span><button class="hear" id="tlHear" type="button"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 6h3l4-3v10l-4-3H2zM11.5 5.5a3.5 3.5 0 0 1 0 5M13.5 3.5a6.5 6.5 0 0 1 0 9"/></svg>Hören</button></div>
+          <p class="tl-com" id="tlCom"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAPS -->
+  <section class="panel" id="lovushki">
+    <div class="split">
+      <div class="trap-side">
+        <div class="head" style="margin-bottom:0">
+          <p class="eyebrow">Где ошибаются все</p>
+          <h2 class="h2">Ловушки</h2>
+          <p class="lead">Эти ошибки я слышал в клубе каждую неделю. От новичков и от людей с B2. Открывай по одной.</p>
+        </div>
+        <div class="counter"><b>8</b><span>ошибок, после которых немец переспрашивает «Wie bitte?»</span></div>
+      </div>
+      <div id="traps">
+        <details class="acc"><summary><span class="q">In 2026</span><i class="plus"></i></summary>
+          <div class="acc-b"><p class="bad">✗ <span>In 2026 habe ich geheiratet.</span></p><p class="good">✓ 2026 habe ich geheiratet.</p><p class="good">✓ Im Jahr 2026 habe ich geheiratet.</p><p class="why">Год - без предлога. «In 2026» пришло из английского. Так пишут только в рекламе стартапов.</p></div>
+        </details>
+        <details class="acc"><summary><span class="q">Am Nacht</span><i class="plus"></i></summary>
+          <div class="acc-b"><p class="bad">✗ <span>am Nacht</span></p><p class="good">✓ in der Nacht</p><p class="why">Утро, обед, вечер - am. Ночь - in der. Запоминается один раз. Обычно после третьей ошибки.</p></div>
+        </details>
+        <details class="acc"><summary><span class="q">Seit + Perfekt</span><i class="plus"></i></summary>
+          <div class="acc-b"><p class="bad">✗ <span>Ich habe seit zwei Jahren Deutsch gelernt.</span></p><p class="good">✓ Ich lerne seit zwei Jahren Deutsch.</p><p class="why">Действие еще идет - значит Präsens. По-русски так же: «я учу два года». Просто поверь русскому.</p></div>
+        </details>
+        <details class="acc"><summary><span class="q">Zwei Jahre vor</span><i class="plus"></i></summary>
+          <div class="acc-b"><p class="bad">✗ <span>zwei Jahre vor</span></p><p class="good">✓ vor zwei Jahren</p><p class="why">Сначала vor, потом время. И Dativ: Jahren, Tagen, Wochen - с -n на конце.</p></div>
+        </details>
+        <details class="acc"><summary><span class="q">Durch zwei Tage</span><i class="plus"></i></summary>
+          <div class="acc-b"><p class="bad">✗ <span>durch zwei Tage</span></p><p class="good">✓ in zwei Tagen</p><p class="why">«Через» во времени - in. Durch - это через лес. Или через стену.</p></div>
+        </details>
+        <details class="acc"><summary><span class="q">Am drei Mai</span><i class="plus"></i></summary>
+          <div class="acc-b"><p class="bad">✗ <span>am drei Mai</span></p><p class="good">✓ am 3. Mai = am dritten Mai</p><p class="why">Дата - порядковое число. Точка после цифры - это не опечатка. Это «-е».</p></div>
+        </details>
+        <details class="acc"><summary><span class="q">Um Freitag</span><i class="plus"></i></summary>
+          <div class="acc-b"><p class="bad">✗ <span>um Freitag</span></p><p class="good">✓ am Freitag</p><p class="why">Um - только для часов. Пятница - не время на часах. Пятница - это состояние души.</p></div>
+        </details>
+        <details class="acc"><summary><span class="q">Am Weihnachten</span><i class="plus"></i></summary>
+          <div class="acc-b"><p class="bad">✗ <span>am Weihnachten</span></p><p class="good">✓ an Weihnachten / zu Weihnachten · zu Ostern</p><p class="why">Праздники - отдельная история. Юг говорит an, север - zu. Артикля нет. Подарки есть.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHEAT SHEET -->
+  <section class="panel" id="shpargalka">
+    <div class="head">
+      <p class="eyebrow">Можно скринить</p>
+      <h2 class="h2">Шпаргалка по падежам</h2>
+    </div>
+    <div class="stages">
+      <article class="stage-c">
+        <header><h3>+ Dativ</h3><span class="cnt">большинство</span></header>
+        <div class="pills">
+          <span class="pill"><b>am</b>день</span><span class="pill"><b>im</b>месяц</span><span class="pill"><b>in</b>через</span><span class="pill"><b>vor</b>назад / до</span><span class="pill"><b>nach</b>после</span><span class="pill"><b>seit</b>с … до сих пор</span><span class="pill"><b>ab</b>начиная с</span><span class="pill"><b>zwischen</b>между</span><span class="pill"><b>von</b>с</span><span class="pill"><b>beim</b>во время</span>
+        </div>
+      </article>
+      <article class="stage-c">
+        <header><h3>+ Akkusativ</h3><span class="cnt">5 предлогов</span></header>
+        <div class="pills">
+          <span class="pill"><b>um</b>в (время)</span><span class="pill"><b>für</b>на срок</span><span class="pill"><b>gegen</b>около</span><span class="pill"><b>bis</b>до</span><span class="pill"><b>über</b>на (выходные)</span>
+        </div>
+      </article>
+      <article class="stage-c">
+        <header><h3>+ Genitiv</h3><span class="cnt">3 предлога</span></header>
+        <div class="pills">
+          <span class="pill"><b>während</b>во время</span><span class="pill"><b>innerhalb</b>в течение</span><span class="pill"><b>außerhalb</b>вне</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="panel" id="test">
+    <div class="split">
+      <div class="head" style="margin-bottom:0;align-content:start">
+        <p class="eyebrow">Проверь себя</p>
+        <h2 class="h2">Восемь вопросов</h2>
+        <p class="lead">Без регистрации. Без смс. После каждого ответа - разбор, почему так.</p>
+      </div>
+      <div class="phone"><div class="phone-in" id="quiz"></div></div>
+    </div>
+  </section>
+
+  <!-- PLATFORM AD -->
+  <section class="band ad" id="platforma">
+    <div class="vrail" aria-hidden="true">STELLAS</div>
+    <div class="leaves" aria-hidden="true">
+      <svg class="leaf l1"><use href="#leaf"/></svg>
+      <svg class="leaf l2"><use href="#leaf"/></svg>
+    </div>
+    <div class="ad-stack">
+
+      <div class="panel">
+        <div class="split">
+          <div>
+            <div class="head">
+              <p class="eyebrow">Платформа Stellas · A0–C1</p>
+              <h2 class="h2">Таких тем там 340</h2>
+            </div>
+            <div class="story">
+              <p>У нас был разговорный клуб. Потом клуб закончился. А личка - нет.</p>
+              <p>Пишут, где упражнения на seit и vor? Что учить после Perfekt? Как сказать врачу, что болит уже неделю?</p>
+              <p>Я отвечал. Одно и то же. Сотый раз.</p>
+              <p>Потом сел и собрал все в одно место. По порядку. От A0 до C1.</p>
+              <p><b>Эта страница - одна тема оттуда. Если зашло - там еще 339.</b></p>
+            </div>
+            <div class="hero-actions" style="margin-top:22px">
+              <a class="btn" href="https://app.lava.top/801303618?tabId=products&sort=published" target="_blank" rel="noopener">Купить доступ <span class="arr">→</span></a>
+              <a class="link" href="#kupit">Сколько стоит</a>
+            </div>
+          </div>
+          <div>
+            <div class="linen">
+              <div class="laptop">
+                <div class="scr"><video muted loop playsinline preload="metadata" poster="media/gemini.jpg"><source src="media/gemini.mp4" type="video/mp4"></video></div>
+                <div class="base"></div>
+              </div>
+            </div>
+            <p class="cap">Гайд в Gemini: словарь с озвучкой, диалоги, текст с переводом по клику.</p>
+          </div>
+        </div>
+        <div class="gmq" aria-hidden="true"><div class="tk-row" id="g1"></div><div class="tk-row rev" id="g2"></div></div>
+      </div>
+
+      <div class="panel">
+        <div class="head">
+          <p class="eyebrow">Честно</p>
+          <h2 class="h2">Почему немецкий стоит на месте</h2>
+        </div>
+        <div class="pains">
+          <div class="pain"><p class="pain-q">Правило из ютуба. Упражнение из телеграма. Объяснение от ChatGPT - каждый раз новое. Через месяц в голове не система, а ящик с проводами.</p><p class="pain-a"><em>На платформе</em>Одна система. 340+ гайдов по порядку, от A0 до C1. Всегда видно, что дальше.</p></div>
+          <div class="pain"><p class="pain-q">Прочитал тему в понедельник. В пятницу - пусто.</p><p class="pain-a"><em>На платформе</em>К каждому гайду - упражнения с ответами и разбором. Плюс флеш-карты и трекер, чтобы повторять, пока не встанет.</p></div>
+          <div class="pain"><p class="pain-q">На курсе двадцать человек. Объясняют на немецком. Том самом, которого ты пока не понимаешь.</p><p class="pain-a"><em>На платформе</em>Объяснения на русском. Как на этой странице. Коротко, с картинками и видео.</p></div>
+          <div class="pain"><p class="pain-q">Правило знаешь. А вслух все равно говоришь in Montag.</p><p class="pain-a"><em>На платформе</em>Версии гайдов в Gemini: озвучка каждого слова, три упражнения, проверка от ИИ. На B1–C1 - чат с ИИ-собеседником на немецком.</p></div>
+          <div class="pain"><p class="pain-q">Через месяц экзамен. Темы вроде знакомые. Слов нет.</p><p class="pain-a"><em>На платформе</em>Раздел экзаменов: Goethe, telc, DTZ, ÖSD, TestDaF. На B1–C1 - интерактивные темы: словарь, аутентичный текст, три диалога, тест.</p></div>
+          <div class="pain"><p class="pain-q">Час репетитора - 30-40 евро. Час.</p><p class="pain-a"><em>На платформе</em>Вся платформа A0–C1 - 30 евро. Один раз. Навсегда.</p></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="row-head">
+          <div class="head" style="margin-bottom:0">
+            <p class="eyebrow">Что внутри</p>
+            <h2 class="h2">Что реализовано на платформе</h2>
+          </div>
+          <div class="arrows">
+            <button class="circ" data-scroll="#show" data-dir="-1" aria-label="Назад"><svg><use href="#i-l"/></svg></button>
+            <button class="circ" data-scroll="#show" data-dir="1" aria-label="Дальше"><svg><use href="#i-r"/></svg></button>
+          </div>
+        </div>
+        <div class="show" id="show">
+          <figure class="shot"><img src="media/p2-guides.jpg" alt="Список тем по грамматике" loading="lazy"><figcaption><b>Грамматика</b><span>Все темы по порядку, от алфавита до глаголов</span></figcaption></figure>
+          <figure class="shot"><img src="media/p3-guide.jpg" alt="Раздел гайдов по местоимениям" loading="lazy"><figcaption><b>Гайды</b><span>Объяснение, видео, упражнения, разбор</span></figcaption></figure>
+          <figure class="shot"><img src="media/p4-words.jpg" alt="Карточки слов с кнопкой озвучки" loading="lazy"><figcaption><b>Слова с озвучкой</b><span>7500+ слов, транскрипция, кнопка Hören</span></figcaption></figure>
+          <figure class="shot"><img src="media/p5-builder.jpg" alt="Конструктор предложений" loading="lazy"><figcaption><b>Конструктор фраз</b><span>Собираешь предложение - приложение проверяет</span></figcaption></figure>
+          <figure class="shot"><img src="media/p6-tracker.jpg" alt="Трекер привычек и прогресса" loading="lazy"><figcaption><b>Трекер</b><span>Чтение, слушание, письмо, серии дней</span></figcaption></figure>
+          <figure class="shot"><img src="media/p8-situations.jpg" alt="Лексика по ситуациям: больница, магазин" loading="lazy"><figcaption><b>Ситуации</b><span>Врач, аптека, касса, возврат товара</span></figcaption></figure>
+          <figure class="shot"><img src="media/p7-work.jpg" alt="Лексика: работа, документы, город" loading="lazy"><figcaption><b>Работа и город</b><span>Собеседование, транспорт, билеты</span></figcaption></figure>
+          <figure class="shot"><img src="media/p1-home.jpg" alt="Главная страница платформы в Notion" loading="lazy"><figcaption><b>Ресурсы</b><span>Фильмы, книги, подкасты - уже по уровням</span></figcaption></figure>
+        </div>
+
+        <div class="stats" style="margin-top:28px">
+          <div class="rows">
+            <div class="row">Гайдов <b><span class="count" data-to="340">340</span>+</b></div>
+            <div class="row">Слов с озвучкой <b><span class="count" data-to="7500">7 500</span>+</b></div>
+            <div class="row">Уровни <b>A0–C1</b></div>
+          </div>
+          <div class="rows">
+            <div class="row">Экзамены <b>Goethe · telc · DTZ · ÖSD · TestDaF</b></div>
+            <div class="row">Где <b>Notion, офлайн, телефон и ноутбук</b></div>
+            <div class="row">Учеников в клубах <b><span class="count" data-to="100">100</span>+</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="head">
+          <p class="eyebrow">Каждый гайд</p>
+          <h2 class="h2">Как устроена тема</h2>
+        </div>
+        <div class="stages">
+          <article class="stage-c">
+            <header><h3>Грамматика</h3><span class="cnt">A0–C1</span></header>
+            <div class="pills"><span class="pill">Объяснение на русском</span><span class="pill">Видео</span><span class="pill">Упражнения</span><span class="pill">Ответы с разбором</span><span class="pill">Версия в Gemini</span></div>
+          </article>
+          <article class="stage-c">
+            <header><h3>Лексика B1–C1</h3><span class="cnt">темы экзаменов</span></header>
+            <div class="pills"><span class="pill">20 слов + 15 фраз</span><span class="pill">Текст с переводом</span><span class="pill">3 диалога</span><span class="pill">Тест с разбором</span><span class="pill">Чат с ИИ</span></div>
+          </article>
+          <article class="stage-c">
+            <header><h3>Жизнь в Германии</h3><span class="cnt">A0–A2</span></header>
+            <div class="pills"><span class="pill">Врач</span><span class="pill">Ämter</span><span class="pill">Работа</span><span class="pill">Магазин</span><span class="pill">Транспорт</span><span class="pill">Фразы по ситуациям</span></div>
+          </article>
+        </div>
+        <div class="devices">
+          <div class="linen wood">
+            <div class="tablet"><video muted loop playsinline preload="metadata" poster="media/modal.jpg"><source src="media/modal.mp4" type="video/mp4"></video></div>
+          </div>
+          <div class="linen">
+            <div class="laptop">
+              <div class="scr"><video muted loop playsinline preload="metadata" poster="media/articles.jpg"><source src="media/articles.mp4" type="video/mp4"></video></div>
+              <div class="base"></div>
+            </div>
+          </div>
+        </div>
+        <p class="cap">На планшете - модальные глаголы со шкалой уверенности. На ноутбуке - артикли: семья Der, Die, Das и тест.</p>
+      </div>
+
+      <div class="panel">
+        <div class="row-head">
+          <div class="head" style="margin-bottom:0">
+            <p class="eyebrow">Без монтажа</p>
+            <h2 class="h2">Что пишут в личку</h2>
+          </div>
+          <div class="arrows">
+            <button class="circ" data-scroll="#reviews" data-dir="-1" aria-label="Назад"><svg><use href="#i-l"/></svg></button>
+            <button class="circ" data-scroll="#reviews" data-dir="1" aria-label="Дальше"><svg><use href="#i-r"/></svg></button>
+          </div>
+        </div>
+        <div class="reviews" id="reviews">
+          <figure class="rvw"><img src="media/r5.jpg" alt="Отзыв: приятно, что автор дает много примеров, инвестиция окупается сполна" loading="lazy"></figure>
+          <figure class="rvw"><img src="media/r6.jpg" alt="Отзыв: темы по грамматике описаны и подобраны упражнения и видео" loading="lazy"></figure>
+          <figure class="rvw"><img src="media/r3.jpg" alt="Отзыв: купила доступ год назад, платформа очень помогла" loading="lazy"></figure>
+          <figure class="rvw"><img src="media/r1.jpg" alt="Отзыв: все удобно и понятно, уроки хорошо структурированы" loading="lazy"></figure>
+          <figure class="rvw"><img src="media/r2.jpg" alt="Отзыв: перепробовала много ресурсов, здесь собраны разные методы" loading="lazy"></figure>
+          <figure class="rvw"><img src="media/r4.jpg" alt="Отзыв: все структурировано, ярко и понятно" loading="lazy"></figure>
+        </div>
+      </div>
+
+      <div class="panel price" id="kupit">
+        <div class="split">
+          <div>
+            <div class="head">
+              <p class="eyebrow">Условия</p>
+              <h2 class="h2">Сколько стоит</h2>
+            </div>
+            <div class="rows price-list">
+              <div class="row">A0–A2 · с нуля <b>20 €</b></div>
+              <div class="row">B1–C1 · уже в теме <b>20 €</b></div>
+              <div class="row total">A0–C1 · обе <b><s>40 €</s>30 €</b></div>
+              <div class="row">Доступ <b>навсегда</b></div>
+              <div class="row">Обновления <b>бесплатно для купивших</b></div>
+              <div class="row">Подарок <b>A0–A2 на украинском</b></div>
+            </div>
+            <div class="buy-actions">
+              <a class="btn btn--wide" href="https://app.lava.top/801303618?tabId=products&sort=published" target="_blank" rel="noopener">Купить доступ <span class="arr">→</span></a>
+              <p class="small">Оплата на lava.top. Платформа в Notion - открывается с телефона и ноутбука, работает без интернета.</p>
+            </div>
+            <div class="coda">
+              <p>Цену после обновлений, скорее всего, подниму. Кто уже купил - получает обновления бесплатно.</p>
+              <p>Репетитор через час уходит. Платформа остается</p>
+            </div>
+          </div>
+          <div class="phone contact">
+            <div class="phone-in">
+              <p class="eyebrow">Stellas</p>
+              <h3>Остались вопросы?</h3>
+              <p class="small" style="margin-top:4px">Какой уровень брать, что внутри, как оплатить - пиши.</p>
+              <div class="handle">Telegram <b>@stellasdeutsch</b></div>
+              <div class="handle">Платформы <b>A0–A2 · B1–C1</b></div>
+              <div class="handle">Формат <b>Notion + Gemini</b></div>
+              <div class="spacer"></div>
+              <a class="btn btn--wide" href="https://t.me/stellasdeutsch" target="_blank" rel="noopener">Написать в Telegram <span class="arr">→</span></a>
+              <a class="btn btn--wide btn--paper" style="border:1px solid var(--line)" href="https://app.lava.top/801303618?tabId=products&sort=published" target="_blank" rel="noopener">Купить платформу <span class="arr">→</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="#tema"><img src="media/logo-light.png" alt="" width="26" height="26">STELLAS</a>
+    <span>Немецкий по-человечески · 2026</span>
+    <a href="https://t.me/stellasdeutsch" target="_blank" rel="noopener">@stellasdeutsch</a>
+  </div>
+</footer>
+
+<a class="sticky-cta" id="stickyCta" href="https://app.lava.top/801303618?tabId=products&sort=published" target="_blank" rel="noopener"><span>Платформа A0–C1</span><b>30 € →</b></a>
+
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const NS = 'http://www.w3.org/2000/svg';
+  const svgEl = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+  const onView = (el, cb, th = .35) => {
+    if (!el) return;
+    if (!('IntersectionObserver' in window)) { cb(); return; }
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { io.disconnect(); cb(); } }), { threshold: th });
+    io.observe(el);
+  };
+
+  /* ---------- hero rings ---------- */
+  (() => {
+    const svg = $('#rings'); const C = 200;
+    const pol = (r, d) => { const a = d * Math.PI / 180; return [C + r * Math.cos(a), C + r * Math.sin(a)]; };
+    const arc = (r, a0, a1) => { const [x0, y0] = pol(r, a0), [x1, y1] = pol(r, a1); return `M${x0.toFixed(2)} ${y0.toFixed(2)}A${r} ${r} 0 ${a1 - a0 > 180 ? 1 : 0} 1 ${x1.toFixed(2)} ${y1.toFixed(2)}`; };
+    const paper = 'rgba(247,247,244,', im = '#9DBB8B', am = '#DCC68A';
+    svgEl('circle', { cx: C, cy: C, r: 176, fill: 'none', stroke: paper + '.28)', 'stroke-width': 1.5, pathLength: 1, class: 'draw', style: 'animation-delay:.1s' }, svg);
+    const g1 = svgEl('g', { class: 'fade', style: 'animation-delay:.6s' }, svg);
+    ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'].forEach((m, i) => {
+      const [a, b] = [pol(170, -90 + i * 30), pol(182, -90 + i * 30)];
+      svgEl('line', { x1: a[0], y1: a[1], x2: b[0], y2: b[1], stroke: paper + '.35)', 'stroke-width': 1.5 }, g1);
+      const [tx, ty] = pol(154, -90 + i * 30 + 15);
+      const t = svgEl('text', { x: tx, y: ty }, g1); t.textContent = m;
+      if (i === 4) { t.setAttribute('fill', im); t.setAttribute('font-weight', '700'); t.setAttribute('font-size', '12.5'); }
+    });
+    svgEl('path', { d: arc(176, 32, 58), fill: 'none', stroke: im, 'stroke-width': 8, 'stroke-linecap': 'round', pathLength: 1, class: 'draw', style: 'animation-delay:1s' }, svg);
+    svgEl('circle', { cx: C, cy: C, r: 124, fill: 'none', stroke: paper + '.28)', 'stroke-width': 1.5, pathLength: 1, class: 'draw', style: 'animation-delay:.45s' }, svg);
+    const g2 = svgEl('g', { class: 'fade', style: 'animation-delay:.9s' }, svg);
+    const step = 360 / 7;
+    ['Mo','Di','Mi','Do','Fr','Sa','So'].forEach((d, i) => {
+      const [a, b] = [pol(118, -90 + i * step), pol(130, -90 + i * step)];
+      svgEl('line', { x1: a[0], y1: a[1], x2: b[0], y2: b[1], stroke: paper + '.35)', 'stroke-width': 1.5 }, g2);
+      const [tx, ty] = pol(104, -90 + i * step + step / 2);
+      const t = svgEl('text', { x: tx, y: ty }, g2); t.textContent = d;
+      if (i === 0) { t.setAttribute('fill', am); t.setAttribute('font-weight', '700'); t.setAttribute('font-size', '12.5'); }
+    });
+    svgEl('path', { d: arc(124, -86, -90 + step - 4), fill: 'none', stroke: am, 'stroke-width': 8, 'stroke-linecap': 'round', pathLength: 1, class: 'draw', style: 'animation-delay:1.35s' }, svg);
+    const clock = svgEl('g', { class: 'fade', style: 'animation-delay:1.3s' }, svg);
+    svgEl('circle', { cx: C, cy: C, r: 76, fill: '#223024' }, clock);
+    for (let i = 0; i < 12; i++) {
+      const [a, b] = [pol(64, -90 + i * 30), pol(i % 3 ? 70 : 72, -90 + i * 30)];
+      svgEl('line', { x1: a[0], y1: a[1], x2: b[0], y2: b[1], stroke: paper + (i % 3 ? '.4)' : '.85)'), 'stroke-width': i % 3 ? 1.5 : 2.5, 'stroke-linecap': 'round' }, clock);
+    }
+    svgEl('line', { x1: C, y1: C, x2: C, y2: C - 54, stroke: paper + '.55)', 'stroke-width': 3, 'stroke-linecap': 'round', class: 'hand hand-m' }, svg);
+    svgEl('line', { x1: C, y1: C, x2: C, y2: C - 38, stroke: '#F7F7F4', 'stroke-width': 5, 'stroke-linecap': 'round', class: 'hand hand-h' }, svg);
+    svgEl('circle', { cx: C, cy: C, r: 5, fill: '#F7F7F4' }, svg);
+    const orb = svgEl('g', { class: 'orbit' }, svg);
+    svgEl('circle', { cx: C, cy: C - 176, r: 4, fill: '#F7F7F4' }, orb);
+  })();
+
+  /* ---------- chat ---------- */
+  onView($('#chat'), () => { if (!reduce) $('#chat').classList.add('play'); }, .45);
+
+  /* ---------- matryoshka ---------- */
+  (() => {
+    const months = $('#months');
+    [['Januar','Winter'],['Februar','Winter'],['März','Frühling'],['April','Frühling'],['Mai','Frühling'],['Juni','Sommer'],['Juli','Sommer'],['August','Sommer'],['September','Herbst'],['Oktober','Herbst'],['November','Herbst'],['Dezember','Winter']]
+      .forEach(([m, s], i) => {
+        const d = document.createElement('div');
+        d.className = 'm' + (i === 4 ? ' is-t' : '');
+        if (i === 4) d.dataset.target = '';
+        d.innerHTML = `${m}<small>${s}</small>`;
+        months.appendChild(d);
+      });
+    const cal = $('#cal');
+    ['Mo','Di','Mi','Do','Fr','Sa','So'].forEach(w => { const d = document.createElement('div'); d.className = 'wd'; d.textContent = w; cal.appendChild(d); });
+    for (let i = 0; i < 35; i++) {
+      const day = i - 3; const d = document.createElement('div');
+      const col = i % 7;
+      if (day < 1) d.className = 'd x';
+      else { d.className = 'd' + (col > 4 ? ' we' : '') + (day === 4 ? ' is-t' : ''); d.textContent = day; if (day === 4) d.dataset.target = ''; }
+      cal.appendChild(d);
+    }
+    // clock scene ticks + gegen arc
+    const ticks = $('#clkTicks');
+    for (let i = 0; i < 12; i++) {
+      const a = (-90 + i * 30) * Math.PI / 180, r0 = i % 3 ? 90 : 84;
+      svgEl('line', { x1: 120 + r0 * Math.cos(a), y1: 120 + r0 * Math.sin(a), x2: 120 + 96 * Math.cos(a), y2: 120 + 96 * Math.sin(a), stroke: '#141614', 'stroke-width': i % 3 ? 2 : 3.5, 'stroke-linecap': 'round' }, ticks);
+    }
+    const ga = d => { const a = (d - 90) * Math.PI / 180; return [120 + 112 * Math.cos(a), 120 + 112 * Math.sin(a)]; };
+    const [g0, g1] = [ga(226), ga(254)];
+    $('#gegenArc').setAttribute('d', `M${g0[0]} ${g0[1]}A112 112 0 0 1 ${g1[0]} ${g1[1]}`);
+
+    const STEPS = [
+      { k: '—', alt: 'im Jahr', cls: 'b-no', title: 'Год', rule: 'Год - без предлога. Просто 2026. Хочешь официально - im Jahr 2026.', ex: [['2026 ziehe ich um.', 'в 2026 переезжаю'], ['Im Jahr 2026 ziehe ich um.', 'в 2026 году'], ['in den 90ern', 'в девяностые']], note: '«In 2026» - это английский. Немцы поймут. Но поморщатся.', crumb: '2026' },
+      { k: 'im', cls: 'b-im', title: 'Месяц и сезон', rule: 'Месяц - это комната. Ты внутри. in + dem = im.', ex: [['im Mai', 'в мае'], ['im Sommer', 'летом'], ['im Januar', 'в январе']], note: 'Все месяцы и сезоны - мужского рода. Поэтому всегда im. Редкий случай, когда немецкий идет навстречу.', crumb: 'im Mai' },
+      { k: 'am', cls: 'b-am', title: 'День, дата, часть дня', rule: 'День - это лист календаря. Ты на нем. an + dem = am.', ex: [['am Montag', 'в понедельник'], ['am 4. Mai', '4 мая'], ['am Abend', 'вечером'], ['am Wochenende', 'на выходных']], note: 'Ночь - исключение: in der Nacht. Ночь не лист. Ночь - комната, в которой темно.', crumb: 'am Montag' },
+      { k: 'um', cls: 'b-um', title: 'Время на часах', rule: 'Точное время - um. Стрелка ходит вокруг циферблата. Вокруг - um.', ex: [['um 8 Uhr', 'в 8 часов'], ['um halb neun', 'в половине девятого'], ['um Mitternacht', 'в полночь']], note: 'Примерно - gegen. Gegen 8 Uhr - около восьми. Так говорит немецкий курьер. И приезжает в одиннадцать.', crumb: 'um 8 Uhr' }
+    ];
+    const N = STEPS.length, stage = $('#stage'), scenes = $$('.scene', stage), info = $('#info');
+    const dots = $('#mDots'), crumbs = $('#crumbs');
+    STEPS.forEach((s, i) => {
+      const b = document.createElement('button'); b.setAttribute('aria-label', `Шаг ${i + 1}: ${s.title}`); b.onclick = () => go(i, true); dots.appendChild(b);
+      if (i) { const sp = document.createElement('span'); sp.className = 'sep'; sp.textContent = '›'; crumbs.appendChild(sp); }
+      const c = document.createElement('span'); c.className = 'crumb'; c.textContent = s.crumb; crumbs.appendChild(c);
+    });
+    const renderInfo = i => {
+      const s = STEPS[i];
+      info.innerHTML = `<div class="info-top"><span class="badge ${s.cls}">${s.k}</span>${s.alt ? `<span class="badge b-im" style="font-size:15px">${s.alt}</span>` : ''}<span class="info-title">${s.title}</span></div>
+        <p class="info-rule">${s.rule}</p>
+        <ul class="ex">${s.ex.map(([d, r], n) => `<li style="--i:${n}"><b>${d}</b><span>${r}</span></li>`).join('')}</ul>
+        <p class="note"><em>Нюанс</em>${s.note}</p>`;
+    };
+    let cur = 0, busy = false, auto = null;
+    const ui = i => {
+      $$('button', dots).forEach((b, k) => b.classList.toggle('on', k === i));
+      $$('.crumb', crumbs).forEach((c, k) => c.classList.toggle('on', k <= i));
+      $('#mNum').textContent = `${i + 1} / ${N}`;
+      $('#mPrev').disabled = i === 0; $('#mNext').disabled = i === N - 1;
+      $('#final').classList.toggle('dim', i !== N - 1);
+      $('#mReplay').classList.toggle('show', i === N - 1);
+      scenes.forEach((s, k) => s.setAttribute('aria-hidden', k === i ? 'false' : 'true'));
+      if (reduce) { renderInfo(i); return; }
+      info.classList.add('swap');
+      setTimeout(() => { renderInfo(i); info.classList.remove('swap'); }, 220);
+    };
+    function go(to, user) {
+      if (to < 0 || to >= N || to === cur || busy) return;
+      if (user) stopAuto();
+      const from = cur, A = scenes[from], B = scenes[to];
+      const fwd = to > from, outer = fwd ? A : B, inner = fwd ? B : A;
+      const smooth = !reduce && Math.abs(to - from) === 1 && A.animate;
+      let geo;
+      if (smooth) {
+        if (!fwd) { B.classList.add('is-moving'); }
+        const t = outer.querySelector('[data-target]');
+        const sr = stage.getBoundingClientRect(), r = t.getBoundingClientRect();
+        const W = sr.width, H = sr.height, cx = r.left - sr.left + r.width / 2, cy = r.top - sr.top + r.height / 2;
+        const s = Math.min(W / r.width, H / r.height);
+        geo = { zoom: `translate(${W / 2 - cx * s}px,${H / 2 - cy * s}px) scale(${s})`, shrink: `translate(${cx - W / (2 * s)}px,${cy - H / (2 * s)}px) scale(${1 / s})` };
+      }
+      A.classList.remove('is-active'); B.classList.add('is-active');
+      cur = to; ui(to);
+      if (!smooth) { B.classList.remove('is-moving'); return; }
+      busy = true;
+      A.classList.add('is-moving'); B.classList.add('is-moving');
+      inner.style.zIndex = 2; outer.style.zIndex = 1;
+      const o = { duration: 1000, easing: 'cubic-bezier(.65,0,.25,1)' };
+      let anim;
+      if (fwd) {
+        outer.animate([{ transform: 'none', opacity: 1 }, { opacity: 1, offset: .3 }, { transform: geo.zoom, opacity: 0 }], o);
+        anim = inner.animate([{ transform: geo.shrink, opacity: 0 }, { opacity: 0, offset: .25 }, { transform: 'none', opacity: 1 }], o);
+      } else {
+        inner.animate([{ transform: 'none', opacity: 1 }, { opacity: 0, offset: .55 }, { transform: geo.shrink, opacity: 0 }], o);
+        anim = outer.animate([{ transform: geo.zoom, opacity: 0 }, { opacity: 1, offset: .6 }, { transform: 'none', opacity: 1 }], o);
+      }
+      anim.onfinish = () => { [A, B].forEach(s => { s.classList.remove('is-moving'); s.style.zIndex = ''; }); busy = false; };
+    }
+    const startAuto = () => { if (reduce || auto) return; auto = setInterval(() => { if (cur < N - 1) go(cur + 1); else stopAuto(); }, 3800); };
+    function stopAuto() { clearInterval(auto); auto = null; }
+    $('#mPrev').onclick = () => go(cur - 1, true);
+    $('#mNext').onclick = () => go(cur + 1, true);
+    $('#mReplay').onclick = () => { go(0, true); setTimeout(startAuto, 600); };
+    stage.addEventListener('click', e => { if (e.target.closest('[data-target]')) go(cur + 1, true); });
+    let tx = null;
+    stage.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+    stage.addEventListener('touchend', e => { if (tx == null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 40) go(cur + (dx < 0 ? 1 : -1), true); tx = null; });
+    renderInfo(0); ui(0);
+    onView(stage, () => setTimeout(startAuto, 1200), .6);
+  })();
+
+  /* ---------- horizontal scrollers ---------- */
+  $$('[data-scroll]').forEach(b => b.addEventListener('click', () => {
+    const t = $(b.dataset.scroll); const card = t.firstElementChild;
+    t.scrollBy({ left: (+b.dataset.dir) * (card ? card.getBoundingClientRect().width + 10 : t.clientWidth * .8), behavior: reduce ? 'auto' : 'smooth' });
+  }));
+
+  /* ---------- timeline ---------- */
+  (() => {
+    const ticks = $('#tlTicks');
+    for (let x = 60; x <= 540; x += 60) if (x !== 300) svgEl('line', { x1: x, y1: 144, x2: x, y2: 156, stroke: 'rgba(247,247,244,.35)', 'stroke-width': 1.5 }, ticks);
+    const CASES = { Dativ: ['c-dat', 'var(--im)'], Akkusativ: ['c-akk', 'var(--am)'], Genitiv: ['c-gen', 'var(--clay)'] };
+    const D = {
+      'vor':        { g: { p1x: 120, p1O: 1, arrX: 120, arrO: 1 }, lab: ['vor 3 Jahren', 120], de: 'Ich bin <b>vor</b> drei Jahren nach Deutschland gekommen.', ru: 'Я приехал в Германию три года назад.', c: 'Dativ', com: 'Сначала vor, потом время. Не «drei Jahre vor». И Dativ: Jahren с -n. С событием vor значит «до»: vor dem Essen.' },
+      'seit':       { g: { segA: 120, segB: 300, segO: 1, p1x: 120, p1O: 1, pulseO: 1 }, lab: ['seit 3 Jahren', 210], de: 'Ich <b>wohne seit</b> drei Jahren in Leipzig.', ru: 'Я живу в Лейпциге три года. И до сих пор.', c: 'Dativ', com: 'Началось в прошлом, идет до сих пор. Поэтому Präsens: wohne. Не habe gewohnt. Самая частая ошибка в клубе.' },
+      'für':        { g: { segA: 360, segB: 480, segO: 1, p1x: 360, p1O: 1, p2x: 480, p2O: 1 }, lab: ['für 2 Wochen', 420], de: 'Ich fahre <b>für</b> zwei Wochen nach Spanien.', ru: 'Я еду в Испанию на две недели.', c: 'Akkusativ', com: 'Отрезок, который отмерил заранее. Как аренда самоката. Взял на двадцать минут - катаешься двадцать минут.' },
+      'in':         { g: { p1x: 420, p1O: 1, arrX: 420, arrO: 1 }, lab: ['in 10 Minuten', 420], de: 'Der Bus kommt <b>in</b> zehn Minuten.', ru: 'Автобус придет через десять минут.', c: 'Dativ', com: 'In = через. Не durch. Durch - это через лес. Автобус через лес не ездит. Обычно.' },
+      'ab':         { g: { segA: 360, segB: 548, segO: 1, p1x: 360, p1O: 1, openO: 1, openX: 552 }, lab: ['ab Montag', 440], de: '<b>Ab</b> Montag gehe ich ins Fitnessstudio.', ru: 'С понедельника хожу в зал.', c: 'Dativ', com: 'С этой точки и дальше. Конца не видно. Как у абонемента в зал, купленного в январе.' },
+      'bis':        { g: { segA: 300, segB: 450, segO: 1, stopX: 450, stopO: 1 }, lab: ['bis 18 Uhr', 375], de: 'Ich arbeite <b>bis</b> 18 Uhr.', ru: 'Я работаю до шести вечера.', c: 'Akkusativ', com: 'Стоп-линия. Дальше - не твоя смена. С артиклем превращается в bis zum: bis zum Freitag.' },
+      'von … bis':  { g: { segA: 180, segB: 420, segO: 1, p1x: 180, p1O: 1, p2x: 420, p2O: 1 }, lab: ['von 9 bis 17 Uhr', 300], de: 'Die Praxis ist <b>von</b> 9 <b>bis</b> 17 Uhr geöffnet.', ru: 'Практика открыта с 9 до 17.', c: 'Dativ', com: 'Рамка с двух сторон. В 17:05 звонить бесполезно. Проверено.' },
+      'nach':       { g: { evA: 200, evB: 340, evO: 1, p1x: 430, p1O: 1 }, ev: 'das Essen', lab: ['nach dem Essen', 430], de: '<b>Nach</b> dem Essen gehen wir spazieren.', ru: 'После еды идем гулять.', c: 'Dativ', com: 'Сначала событие, потом ты. Nach Berlin - это уже про дорогу, не про время.' },
+      'während':    { g: { evA: 170, evB: 430, evO: 1, segA: 170, segB: 430, segO: 1 }, ev: 'der Film', lab: ['während des Films', 300], de: '<b>Während</b> des Films schläft mein Vater.', ru: 'Во время фильма мой отец спит.', c: 'Genitiv', com: 'Одновременно с событием. Genitiv: des Films. В разговоре многие скажут dem Film - и выживут. На экзамене - des.' },
+      'zwischen':   { g: { p1x: 240, p1O: 1, p2x: 360, p2O: 1, segA: 240, segB: 360, segO: .45 }, lab: ['zwischen 12 und 13 Uhr', 300], de: 'Ich rufe Sie <b>zwischen</b> 12 und 13 Uhr an.', ru: 'Я позвоню вам между 12 и 13.', c: 'Dativ', com: 'Окно между двумя точками. Немецкий Handwerker тоже так говорит. Приходит в 15:40.' }
+    };
+    const BASE = { segA: 300, segB: 300, segO: 0, p1x: 300, p1O: 0, p2x: 300, p2O: 0, arrX: 300, arrO: 0, evA: 300, evB: 300, evO: 0, pulseO: 0, stopX: 300, stopO: 0, openX: 552, openO: 0, labX: 300 };
+    const E = { seg: $('#tlSeg'), p1: $('#tlP1'), p2: $('#tlP2'), arr: $('#tlArr'), ev: $('#tlEv'), evT: $('#tlEvT'), pulse: $('#tlPulse'), stop: $('#tlStop'), open: $('#tlOpen'), lab: $('#tlLab') };
+    let st = { ...BASE }, raf = 0;
+    const render = s => {
+      E.seg.setAttribute('x', Math.min(s.segA, s.segB)); E.seg.setAttribute('width', Math.max(.01, Math.abs(s.segB - s.segA))); E.seg.setAttribute('opacity', s.segO);
+      E.p1.setAttribute('cx', s.p1x); E.p1.setAttribute('opacity', s.p1O);
+      E.p2.setAttribute('cx', s.p2x); E.p2.setAttribute('opacity', s.p2O);
+      E.arr.setAttribute('d', `M300 150Q${(300 + s.arrX) / 2} 62 ${s.arrX} 140`); E.arr.setAttribute('opacity', s.arrO);
+      E.ev.setAttribute('x', Math.min(s.evA, s.evB)); E.ev.setAttribute('width', Math.max(.01, Math.abs(s.evB - s.evA))); E.ev.setAttribute('opacity', s.evO);
+      E.evT.setAttribute('x', (s.evA + s.evB) / 2); E.evT.setAttribute('opacity', s.evO);
+      E.pulse.setAttribute('opacity', s.pulseO);
+      E.stop.setAttribute('x1', s.stopX); E.stop.setAttribute('x2', s.stopX); E.stop.setAttribute('opacity', s.stopO);
+      E.open.setAttribute('transform', `translate(${s.openX} 0)`); E.open.setAttribute('opacity', s.openO);
+      E.lab.setAttribute('x', s.labX);
+    };
+    const tween = target => {
+      cancelAnimationFrame(raf);
+      const from = { ...st }, t0 = performance.now(), dur = reduce ? 1 : 850;
+      const f = now => {
+        let p = Math.min(1, (now - t0) / dur); p = p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+        for (const k in target) st[k] = from[k] + (target[k] - from[k]) * p;
+        render(st); if (p < 1) raf = requestAnimationFrame(f);
+      };
+      raf = requestAnimationFrame(f);
+    };
+    const chips = $('#chips'), out = $('#tlOut');
+    const keys = Object.keys(D);
+    let curK = null, auto = null;
+    const pick = (k, user) => {
+      if (user) { clearInterval(auto); auto = null; }
+      if (k === curK) return; curK = k;
+      const d = D[k];
+      $$('.chip', chips).forEach(c => c.setAttribute('aria-pressed', c.dataset.k === k));
+      const [cls, col] = CASES[d.c];
+      E.seg.style.fill = col; E.pulse.querySelectorAll('circle').forEach((c, i) => i ? c.style.fill = col : c.style.stroke = col);
+      E.evT.textContent = d.ev || '';
+      E.lab.textContent = d.lab[0];
+      tween({ ...BASE, openX: st.openX, ...d.g, labX: d.lab[1] });
+      const apply = () => {
+        $('#tlDe').innerHTML = d.de.replace(/<b>/g, `<b style="background:${col}">`);
+        $('#tlRu').textContent = d.ru;
+        const c = $('#tlCase'); c.className = 'case ' + cls; c.textContent = '+ ' + d.c;
+        $('#tlCom').textContent = d.com;
+        out.classList.remove('swap');
+      };
+      if (reduce || !$('#tlDe').textContent) apply();
+      else { out.classList.add('swap'); setTimeout(apply, 200); }
+    };
+    keys.forEach(k => {
+      const b = document.createElement('button'); b.className = 'chip'; b.dataset.k = k; b.textContent = k; b.setAttribute('aria-pressed', 'false');
+      b.onclick = () => pick(k, true); chips.appendChild(b);
+    });
+    pick('seit');
+    onView($('#tl'), () => {
+      if (reduce) return;
+      let i = keys.indexOf(curK);
+      auto = setInterval(() => {
+        i = (i + 1) % keys.length; pick(keys[i]);
+        const c = chips.children[i]; chips.scrollTo({ left: c.offsetLeft - 16, behavior: 'smooth' });
+        if (i === keys.indexOf('seit')) { clearInterval(auto); auto = null; }
+      }, 3400);
+    }, .6);
+  })();
+
+  /* ---------- quiz ---------- */
+  (() => {
+    const Q = [
+      { s: 'Wir treffen uns ___ Freitag.', ru: 'Встречаемся в пятницу.', o: ['am', 'im', 'um'], a: 0, ok: 'День - лист календаря. Am.', no: 'Пятница - день. День - am. Всегда.' },
+      { s: 'Der Deutschkurs beginnt ___ 18 Uhr.', ru: 'Курс начинается в 18:00.', o: ['am', 'um', 'im'], a: 1, ok: 'Точное время - um. Стрелка ходит вокруг.', no: '18 Uhr - точка на циферблате. Значит um.' },
+      { s: '___ Sommer fahren wir an die Ostsee.', ru: 'Летом едем на Балтику.', o: ['Am', 'Um', 'Im'], a: 2, ok: 'Сезон - комната. Im Sommer.', no: 'Сезон - комната, ты внутри. Im Sommer.' },
+      { s: 'Ich lerne ___ zwei Jahren Deutsch.', ru: 'Я учу немецкий два года.', o: ['seit', 'vor', 'für'], a: 0, ok: 'Учишь до сих пор - seit. И глагол в Präsens.', no: 'Учишь до сих пор? Тогда seit. Vor - это «назад», событие уже закончилось.' },
+      { s: 'Wir sind ___ zwei Jahren nach Köln gezogen.', ru: 'Мы переехали в Кельн два года назад.', o: ['seit', 'in', 'vor'], a: 2, ok: 'Переехали - и все, событие в прошлом. Vor.', no: 'Переезд закончился. Два года назад - vor zwei Jahren.' },
+      { s: '___ der Nacht kann ich nicht schlafen.', ru: 'Ночью не могу уснуть.', o: ['Am', 'In', 'Um'], a: 1, ok: 'Помнишь исключение. Уважаю.', no: 'Ночь - исключение. In der Nacht. Смирись.' },
+      { s: 'Der Zug kommt ___ zehn Minuten.', ru: 'Поезд придет через десять минут.', o: ['in', 'nach', 'durch'], a: 0, ok: 'In = через. Все правильно.', no: 'Через десять минут - in. Durch - это сквозь.' },
+      { s: '___ nächster Woche ist die Praxis wieder geöffnet.', ru: 'Со следующей недели практика снова открыта.', o: ['Seit', 'Ab', 'Vor'], a: 1, ok: 'С этой точки и дальше - ab.', no: 'Неделя еще не наступила. Seit - только из прошлого. Нужно ab.' }
+    ];
+    const box = $('#quiz'); let i = 0, score = 0;
+    const draw = () => {
+      if (i >= Q.length) return end();
+      const q = Q[i];
+      box.innerHTML = `<div class="q-top"><span>Вопрос ${i + 1} / ${Q.length}</span><span>${score} верно</span></div>
+        <div class="q-bar"><i style="width:${i / Q.length * 100}%"></i></div>
+        <p class="q-text">${q.s.replace('___', '<span class="gap">&nbsp;</span>')}</p>
+        <p class="q-ru">${q.ru}</p>
+        <div class="opts">${q.o.map((o, k) => `<button class="opt" data-k="${k}">${o}<span></span></button>`).join('')}</div>`;
+      $$('.opt', box).forEach(b => b.onclick = () => answer(+b.dataset.k));
+    };
+    const answer = k => {
+      const q = Q[i], right = k === q.a;
+      if (right) score++;
+      $$('.opt', box).forEach((b, n) => { b.disabled = true; if (n === q.a) { b.classList.add('ok'); b.lastChild.textContent = '✓'; } else if (n === k) { b.classList.add('no'); b.lastChild.textContent = '✗'; } });
+      const gap = $('.gap', box); gap.textContent = q.o[q.a]; gap.classList.add(right ? 'ok' : 'no');
+      $('.q-top span:last-child', box).textContent = `${score} верно`;
+      $('.q-bar i', box).style.width = `${(i + 1) / Q.length * 100}%`;
+      const fb = document.createElement('p'); fb.className = 'fb'; fb.innerHTML = `<b>${right ? 'Верно.' : 'Мимо.'}</b> ${right ? q.ok : q.no}`;
+      box.appendChild(fb);
+      const nx = document.createElement('button'); nx.className = 'btn btn--wide'; nx.innerHTML = (i === Q.length - 1 ? 'Результат' : 'Дальше') + ' <span class="arr">→</span>';
+      nx.onclick = () => { i++; draw(); }; box.appendChild(nx); nx.focus({ preventScroll: true });
+    };
+    const end = () => {
+      const msg = score === 8 ? 'Восемь из восьми. Можешь рисовать эту матрешку другим.' : score >= 5 ? 'Нормально. Ночь и seit - перечитай. Остальное держится.' : 'Ничего страшного. Пролистай матрешку еще раз - и заново.';
+      box.innerHTML = `<div class="q-end"><p class="eyebrow">Результат</p><div class="q-score">${score}<small> / ${Q.length}</small></div>
+        <p style="margin:0;font-size:17px">${msg}</p>
+        <p class="note" style="margin:0"><em>На платформе</em>К каждой из 340 тем - упражнения с ответами и разбором. Как этот тест, только больше.</p>
+        <a class="btn btn--wide" href="https://app.lava.top/801303618?tabId=products&sort=published" target="_blank" rel="noopener">Купить платформу <span class="arr">→</span></a>
+        <button class="replay show" id="qAgain" style="justify-self:start">↺ Пройти еще раз</button></div>`;
+      $('#qAgain').onclick = () => { i = 0; score = 0; draw(); };
+      if (score >= 6 && window.__confetti) window.__confetti();
+    };
+    draw();
+  })();
+
+  /* ---------- counters ---------- */
+  $$('.count').forEach(el => onView(el, () => {
+    if (reduce) return;
+    const to = +el.dataset.to, t0 = performance.now(), dur = 1300;
+    const f = now => { const p = Math.min(1, (now - t0) / dur), v = Math.round(to * (1 - Math.pow(1 - p, 3))); el.textContent = v.toLocaleString('ru-RU'); if (p < 1) requestAnimationFrame(f); };
+    requestAnimationFrame(f);
+  }, .8));
+
+  /* ---------- videos: play only in view ---------- */
+  $$('video').forEach(v => {
+    if (reduce) { v.controls = true; return; }
+    if (!('IntersectionObserver' in window)) { v.play().catch(() => {}); return; }
+    new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) v.play().catch(() => { v.controls = true; }); else v.pause(); }), { threshold: .25 }).observe(v);
+  });
+
+
+  /* ---------- speech ---------- */
+  const canSpeak = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+  const speak = (text, btn) => {
+    if (!canSpeak) return;
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text); u.lang = 'de-DE'; u.rate = .9;
+    const v = speechSynthesis.getVoices().find(v => /^de/i.test(v.lang)); if (v) u.voice = v;
+    if (btn) { btn.classList.add('on'); u.onend = u.onerror = () => btn.classList.remove('on'); }
+    speechSynthesis.speak(u);
+  };
+  if (!canSpeak) $$('.hear').forEach(b => b.hidden = true);
+  $('#tlHear').onclick = e => speak($('#tlDe').textContent, e.currentTarget);
+
+  /* ---------- tickers ---------- */
+  (() => {
+    const items = [['am', 'Montag'], ['im', 'Mai'], ['um', '8 Uhr'], ['seit', 'drei Jahren'], ['vor', 'zwei Tagen'], ['in', 'zehn Minuten'], ['ab', 'Montag'], ['bis', 'Freitag'], ['in der', 'Nacht'], ['während', 'des Films'], ['gegen', 'acht'], ['zwischen', '12 und 13']];
+    const row = list => list.map(([p, w]) => `<span><i>${p}</i> ${w}</span><span class="sep">●</span>`).join('');
+    const a = row(items), b = row(items.slice(6).concat(items.slice(0, 6)));
+    $('#tk1').innerHTML = a + a; $('#tk2').innerHTML = b + b;
+    const G = ['Alphabet', 'Artikel', 'Plural', 'Präsens', 'Perfekt', 'Präteritum', 'Modalverben', 'Trennbare Verben', 'Akkusativ', 'Dativ', 'Genitiv', 'Wechselpräpositionen', 'Temporale Präpositionen', 'Adjektivdeklination', 'Komparativ', 'Nebensätze', 'Relativsätze', 'Konjunktiv II', 'Passiv', 'Futur I', 'Futur II', 'n-Deklination', 'zu + Infinitiv', 'Imperativ', 'Plusquamperfekt', 'Reflexive Verben', 'Beim Arzt', 'Im Supermarkt', 'Jobcenter', 'Wohnung mieten', 'TestDaF', 'Goethe B1'];
+    const pills = list => list.map(t => `<span class="gpill${t === 'Temporale Präpositionen' ? ' here' : ''}">${t === 'Temporale Präpositionen' ? t + ' · ты здесь' : t}</span>`).join('');
+    const g1 = G.slice(0, 16), g2 = G.slice(16);
+    $('#g1').innerHTML = pills(g1) + pills(g1); $('#g2').innerHTML = pills(g2) + pills(g2);
+  })();
+
+  /* ---------- heading reveal ---------- */
+  $$('.h2').forEach(h => {
+    const words = h.textContent.trim().split(/\s+/);
+    h.setAttribute('aria-label', h.textContent.trim());
+    h.innerHTML = words.map((w, i) => `<span class="w" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`).join(' ');
+    onView(h, () => { if (!reduce) h.classList.add('play'); }, .6);
+  });
+
+  /* ---------- day / sky ---------- */
+  (() => {
+    const range = $('#dRange'), sky = $('#sky');
+    const W = ['zwölf', 'eins', 'zwei', 'drei', 'vier', 'fünf', 'sechs', 'sieben', 'acht', 'neun', 'zehn', 'elf'];
+    const PARTS = [
+      { k: 'Morgen', a: 5, b: 9, say: 'am Morgen', ru: 'утром', go: 34, com: 'am Morgen. Не путать с morgen - завтра. Morgen am Morgen - завтра утром. Да, так бывает.' },
+      { k: 'Vormittag', a: 9, b: 12, say: 'am Vormittag', ru: 'до обеда', go: 42, com: 'am Vormittag. До обеда. У немцев для этого отдельное слово. У них для всего отдельное слово.' },
+      { k: 'Mittag', a: 12, b: 14, say: 'am Mittag', ru: 'в обед', go: 50, com: 'am Mittag. Обед. В это время в Amt лучше не звонить.' },
+      { k: 'Nachmittag', a: 14, b: 18, say: 'am Nachmittag', ru: 'после обеда', go: 62, com: 'am Nachmittag. После обеда. Офис уже мысленно на Feierabend.' },
+      { k: 'Abend', a: 18, b: 22, say: 'am Abend', ru: 'вечером', go: 78, com: 'am Abend. Вечер. Тот самый Feierabend.' },
+      { k: 'Nacht', a: 22, b: 29, say: 'in der Nacht', ru: 'ночью', go: 93, com: 'in der Nacht. Исключение. Помнишь матрешку? Ночь - не лист, а комната. Темная.' }
+    ];
+    const partAt = t => PARTS.find(p => (t >= p.a && t < p.b) || (t + 24 >= p.a && t + 24 < p.b)) || PARTS[5];
+    const dp = $('#dParts');
+    PARTS.forEach(p => { const b = document.createElement('button'); b.type = 'button'; b.className = 'dpart' + (p.k === 'Nacht' ? ' nacht' : ''); b.textContent = p.say; b.onclick = () => { stop(); sweep(p.go, 900); }; dp.appendChild(b); });
+    const stars = $('#stars');
+    let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    for (let i = 0; i < 46; i++) svgEl('circle', { cx: (rnd() * 800).toFixed(1), cy: (rnd() * 190).toFixed(1), r: (rnd() * 1.4 + .5).toFixed(2), fill: '#fff', opacity: (rnd() * .6 + .4).toFixed(2) }, stars);
+    const K = [[0, '#0E1620', '#1C2A36'], [4.5, '#111B28', '#243244'], [6, '#4E6688', '#F0B98C'], [8, '#8FB3CF', '#E4E8DC'], [13, '#7FAED2', '#E6EEE8'], [17, '#8AA9C4', '#EBD3AE'], [19.5, '#3F4E72', '#E08A5E'], [21.5, '#18203A', '#34365A'], [24, '#0E1620', '#1C2A36']];
+    const hx = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+    const mix = (a, b, p) => { const A = hx(a), B = hx(b); return '#' + A.map((v, i) => Math.round(v + (B[i] - v) * p).toString(16).padStart(2, '0')).join(''); };
+    const skyAt = t => { for (let i = 0; i < K.length - 1; i++) if (t >= K[i][0] && t <= K[i + 1][0]) { const p = (t - K[i][0]) / (K[i + 1][0] - K[i][0]); return [mix(K[i][1], K[i + 1][1], p), mix(K[i][2], K[i + 1][2], p)]; } return [K[0][1], K[0][2]]; };
+    const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+    const nightAt = t => t < 5 ? 1 : t < 7 ? 1 - (t - 5) / 2 : t < 19 ? 0 : t < 21.5 ? (t - 19) / 2.5 : 1;
+    const E = { top: $('#skyTop'), bot: $('#skyBot'), sun: $('#sunG'), moon: $('#moonG'), win: $('#win'), lab: $('#skyLab'), clock: $('#dClock'), say: $('#dSay'), off: $('#dOff'), com: $('#dCom'), halb: $('#dHalb') };
+    const hills = $$('.hill, .hill-g', sky);
+    let lastPart = null, phrase = '';
+    const render = v => {
+      const t = v / 4, q = Math.round(v) % 96, h = Math.floor(q / 4), m = (q % 4) * 15;
+      const [c1, c2] = skyAt(t); E.top.setAttribute('stop-color', c1); E.bot.setAttribute('stop-color', c2);
+      const n = nightAt(t);
+      stars.setAttribute('opacity', n.toFixed(2));
+      hills.forEach(el => el.setAttribute('fill', mix(el.dataset.d, el.dataset.n, n * .85)));
+      const sp = (t - 5) / 16; E.sun.setAttribute('transform', `translate(${60 + sp * 680} ${300 - Math.sin(clamp(sp) * Math.PI) * 235})`); E.sun.setAttribute('opacity', clamp(Math.min(sp, 1 - sp) * 8).toFixed(2));
+      const tn = t < 12 ? t + 24 : t, mp = (tn - 19.5) / 12; E.moon.setAttribute('transform', `translate(${60 + mp * 680} ${290 - Math.sin(clamp(mp) * Math.PI) * 220})`); E.moon.setAttribute('opacity', clamp(Math.min(mp, 1 - mp) * 8).toFixed(2));
+      E.win.setAttribute('opacity', clamp(n * 1.4).toFixed(2));
+      const hh = String(h).padStart(2, '0'), mm = String(m).padStart(2, '0');
+      E.clock.textContent = `${hh}:${mm}`;
+      E.off.textContent = `Официально: um ${h}:${mm} Uhr`;
+      const w = x => W[x % 12];
+      let say;
+      if (m === 0) say = h === 0 ? 'um <b>Mitternacht</b>' : `um <b>${w(h)}</b>`;
+      else if (m === 15) say = `um <b>Viertel nach ${w(h)}</b>`;
+      else if (m === 30) say = `um <b>halb ${w(h + 1)}</b>`;
+      else say = `um <b>Viertel vor ${w(h + 1)}</b>`;
+      E.say.innerHTML = say; phrase = E.say.textContent;
+      E.halb.classList.toggle('off2', m !== 30);
+      if (m === 30) E.halb.innerHTML = `<b>Halb ${w(h + 1)} = ${h % 12 || 12}:30.</b> Половина ДО ${['двенадцати','часа','двух','трех','четырех','пяти','шести','семи','восьми','девяти','десяти','одиннадцати'][(h + 1) % 12]}. Немцы считают до следующего часа. На этом сыпались все в клубе.`;
+      const p = partAt(t);
+      if (p !== lastPart) {
+        lastPart = p;
+        E.lab.innerHTML = `${p.say}<small>${p.ru}</small>`;
+        E.com.textContent = p.com;
+        $$('.dpart', dp).forEach((b, i) => b.classList.toggle('on', PARTS[i] === p));
+      }
+    };
+    let raf = 0, auto = true;
+    const stop = () => { auto = false; cancelAnimationFrame(raf); };
+    const sweep = (to, dur, then) => {
+      cancelAnimationFrame(raf);
+      const from = +range.value, t0 = performance.now(); dur = reduce ? 1 : dur;
+      const f = now => {
+        let p = Math.min(1, (now - t0) / dur); const e = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+        const v = from + (to - from) * e; range.value = Math.round(v); render(v);
+        if (p < 1) raf = requestAnimationFrame(f); else { range.value = to; render(to); then && then(); }
+      };
+      raf = requestAnimationFrame(f);
+    };
+    range.addEventListener('input', () => { stop(); render(+range.value); });
+    range.addEventListener('pointerdown', stop);
+    $('#dHear').onclick = e => speak(phrase, e.currentTarget);
+    render(+range.value);
+    onView(sky, () => { if (reduce) return; sweep(16, 900, () => auto && sweep(93, 7000, () => auto && sweep(34, 1400))); }, .55);
+  })();
+
+  /* ---------- tilt ---------- */
+  if (!reduce && matchMedia('(pointer:fine)').matches) {
+    $$('.tile, .stage-c, .laptop, .rvw').forEach(el => {
+      el.classList.add('tilt');
+      el.addEventListener('pointermove', e => {
+        const r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        el.style.transform = `perspective(900px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-4px)`;
+        el.style.transitionDuration = '.12s';
+      });
+      el.addEventListener('pointerleave', () => { el.style.transform = ''; el.style.transitionDuration = ''; });
+    });
+  }
+
+  /* ---------- scroll: progress + leaf parallax ---------- */
+  (() => {
+    const bar = $('#progress'), leaves = $$('.leaves');
+    let ticking = false;
+    const upd = () => {
+      ticking = false;
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+      if (!reduce) leaves.forEach(l => { const r = l.parentElement.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight) l.style.transform = `translateY(${(r.top + r.height / 2 - innerHeight / 2) * -0.12}px)`; });
+    };
+    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
+    upd();
+  })();
+
+  /* ---------- confetti ---------- */
+  window.__confetti = () => {
+    if (reduce) return;
+    const c = document.createElement('canvas'); c.className = 'confetti'; document.body.appendChild(c);
+    const x = c.getContext('2d'), dpr = Math.min(2, devicePixelRatio || 1);
+    c.width = innerWidth * dpr; c.height = innerHeight * dpr; x.scale(dpr, dpr);
+    const cols = ['#9DBB8B', '#DCC68A', '#C9765A', '#F7F7F4', '#2B392D'];
+    const P = Array.from({ length: 140 }, () => ({ x: innerWidth / 2 + (Math.random() - .5) * 80, y: innerHeight * .55, vx: (Math.random() - .5) * 14, vy: -Math.random() * 15 - 6, r: Math.random() * Math.PI, vr: (Math.random() - .5) * .3, s: Math.random() * 8 + 6, c: cols[Math.floor(Math.random() * cols.length)], leaf: Math.random() < .4 }));
+    const t0 = performance.now();
+    const f = now => {
+      const el = now - t0; x.clearRect(0, 0, innerWidth, innerHeight);
+      P.forEach(p => {
+        p.vy += .38; p.vx *= .99; p.x += p.vx; p.y += p.vy; p.r += p.vr;
+        x.save(); x.translate(p.x, p.y); x.rotate(p.r); x.fillStyle = p.c; x.globalAlpha = Math.max(0, 1 - el / 2600);
+        if (p.leaf) { x.beginPath(); x.moveTo(0, p.s); x.lineTo(0, 0); x.arc(p.s, p.s, p.s, Math.PI, Math.PI * 1.5); x.lineTo(p.s, p.s * .45); x.lineTo(p.s * .6, p.s * .45); x.lineTo(p.s * .45, p.s); x.closePath(); x.fill(); }
+        else x.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2);
+        x.restore();
+      });
+      if (el < 2700) requestAnimationFrame(f); else c.remove();
+    };
+    requestAnimationFrame(f);
+  };
+
+  /* ---------- sticky CTA ---------- */
+  (() => {
+    const cta = $('#stickyCta'); if (!('IntersectionObserver' in window)) return;
+    let heroIn = true, buyIn = false;
+    const upd = () => cta.classList.toggle('show', !heroIn && !buyIn);
+    new IntersectionObserver(es => { heroIn = es[0].isIntersecting; upd(); }).observe($('#tema'));
+    new IntersectionObserver(es => { buyIn = es[0].isIntersecting; upd(); }, { threshold: .15 }).observe($('#kupit'));
+  })();
+})();
+</script>
+</body>
+</html>
